@@ -1,0 +1,20 @@
+:root {
+  --primary : #283044;
+  --secondary: #78A1BB;
+  --text-color: #EBF5EE;
+  --highlight-orange: #EF803B;
+}
+
+body {
+  font-size: 16px;
+  color: var(--text-color);
+  /*background-color: var(--text-color);*/
+  background-color: #eee; /* light grey */
+  font-family: 'Carrois Gothic SC', sans-serif;
+  letter-spacing: .05em; /* .1em standard */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

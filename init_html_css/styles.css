@@ -1,0 +1,195 @@
+:root {
+  --primary : #283044;
+  --secondary: #78A1BB;
+  --text-color: #EBF5EE;
+  --highlight-orange: #EF803B;
+}
+
+body {
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: var(--text-color);
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: .05em; /* .1em standard */
+}
+
+#header-nav {
+  background-color: var(--primary);
+  border: 0;
+  border-radius: 0;
+}
+
+#nav-list a {
+  color: var(--text-color);
+}
+#nav-list a:hover, #nav-list a:focus {
+  background-color: var(--secondary);
+}
+
+#collapsable-nav {
+  text-align: center;
+}
+
+/* Top nav bar */
+.navbar-brand {
+  padding-top: 15px;
+}
+.navbar-brand h1 {
+  color: var(--text-color);
+  font-size: 1.5em;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #222;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: .75;
+}
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+
+/* XS CONTACT INFO BUTTON */
+#call-btn {
+  background-color: var(--primary);
+  margin-bottom: 0px;
+
+}
+#call-btn a {
+  color: var(--text-color);
+  font-size: 1.2em
+
+}
+#cal-btn span {
+  padding-left: 5px;
+}
+#email {
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  background-color: var(--primary);
+  font-size: .8em
+}
+
+/* MAIN CONTENT */
+#main-content {
+  background-color: var(--secondary): 
+}
+
+/* JUMBOTRON: Pic of me and introduction upon hover */
+.container .jumbotron {
+  margin-top: 15px;
+  padding: 0px;
+  width: 100%;
+  position: relative;
+}
+.container .jumbotron p {
+  position: absolute;
+  text-align: center;
+  right: auto;
+  top: 25%;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  margin-left: 5%;
+  margin-right: 5%;
+  visibility: hidden;
+}
+.container .jumbotron:hover {
+  opacity: .5;
+}
+.container .jumbotron:hover p {
+  visibility: visible;
+}
+
+
+/* PHOTO ALBUM TILES */
+#home-tiles {
+  background-color: var(--primary);
+  padding: 45px;
+}
+#santorini-tile, #athens-tile, #portugal-tile {
+  position: relative;
+  width: 100%;
+  margin-bottom: 15px;
+  border: 2px solid var(--text-color);
+  overflow: hidden;
+}
+#santorini-tile:hover, #athens-tile:hover, #portugal-tile:hover {
+  box-shadow: 0 1px 5px 1px var(--highlight-orange);
+}
+#santorini-tile span, #athens-tile span, #portugal-tile span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+  text-transform: capitalize;
+  background-color: #000;
+  color: var(--text-color);
+  opacity: .8;
+  }
+
+
+/* FOOTER */
+.panel-footer section {
+  color: #222;
+  margin-top: 30px;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  border-top: 0;
+}
+.panel-footer span {
+  font-weight: bold;
+}
+
+
+
+/********** Large devices only **********/
+@media (min-width: 1200px) {
+  .container .jumbotron p {
+      font-size: 50px;
+  } 
+}
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container .jumbotron p {
+    font-size: 40px;
+  } 
+}
+
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+.container .jumbotron p {
+    font-size: 40px;
+  } 
+}
+
+/********** Extra small devices only **********/
+@media (max-width: 767px) {
+  .container .jumbotron p {
+    font-size: 25px;
+  } 
+}
+
+
+/********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
+@media (max-width: 479px) {
+  .navbar-brand h1 {
+    font-size: 1.2em;
+  }
+
+  .container .jumbotron p {
+    font-size: 20px;
+  } 
+
+  .col-xxs-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+    width: 100%;
+  }
+}
+
+
+

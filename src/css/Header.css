@@ -1,0 +1,70 @@
+#header-nav {
+  background-color: var(--primary);
+  border: 0;
+  border-radius: 0;
+}
+
+#nav-list a {
+  color: var(--text-color);
+}
+#nav-list a:hover, #nav-list a:focus {
+  background-color: var(--secondary);
+}
+
+#collapsable-nav {
+  text-align: center;
+}
+
+/* Top nav bar */
+.navbar-brand {
+  padding-top: 15px;
+}
+.navbar-brand h1 {
+  color: var(--text-color);
+  font-size: 1.5em;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #222;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: .75;
+}
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+
+/* XS CONTACT INFO BUTTON */
+#call-btn {
+  background-color: var(--primary);
+  margin-bottom: 0px;
+
+}
+#call-btn a {
+  color: var(--text-color);
+  font-size: 1.2em
+
+}
+#cal-btn span {
+  padding-left: 5px;
+}
+#email {
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  background-color: var(--primary);
+  font-size: .8em
+}
+
+@media (max-width: 479px) {
+  .navbar-brand h1 {
+    font-size: 1em;
+  }
+
+  .col-xxs-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+    width: 100%;
+  }
+}

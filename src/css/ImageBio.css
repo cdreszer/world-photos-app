@@ -1,0 +1,75 @@
+
+/* JUMBOTRON: Pic of me and introduction upon hover */
+.container .jumbotron {
+  margin-top: 15px;
+  padding: 0px;
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+}
+.container .jumbotron p {
+  position: absolute;
+  text-align: center;
+  right: auto;
+  top: 25%;
+  -webkit-text-stroke: 1px #111; /* text outline */
+  margin-left: 5%;
+  margin-right: 5%;
+  visibility: hidden;
+  font-weight: bold;
+  letter-spacing: .02em;
+}
+.container #jumbotron-image {
+  margin-top: 15px;
+}
+.container .jumbotron:hover #jumbotron-image {
+  opacity: .5;
+}
+.container .jumbotron:hover p {
+  visibility: visible;
+}
+
+/********** Large devices only **********/
+@media (min-width: 1200px) {
+  .container .jumbotron p {
+      font-size: 50px;
+  } 
+}
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container .jumbotron p {
+    font-size: 40px;
+  } 
+}
+
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+.container .jumbotron p {
+    font-size: 40px;
+  } 
+}
+
+/********** Extra small devices only **********/
+@media (max-width: 767px) {
+  .container .jumbotron p {
+    font-size: 25px;
+  } 
+}
+
+
+/********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
+@media (max-width: 479px) {
+  .container .jumbotron p {
+    font-size: 20px;
+  } 
+
+  .col-xxs-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+    width: 100%;
+  }
+}
