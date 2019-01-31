@@ -21,11 +21,12 @@ class Directory extends Component {
   }
 
   render() {
+    const imageURI = require('./../images/' + this.props.image);
     return (
       <div className="col-md-4 col-sm-6 col-xs-12">
         <a href="#">
           <div className="directory-tile" id={this.props.name + "-tile"}>
-            <Image className="Image" src={this.props.image} alt={this.props.name} fluid/>
+            <Image className="Image" src={imageURI} alt={this.props.name} fluid/>
             <span>{this.props.name}</span>
           </div>
         </a>
