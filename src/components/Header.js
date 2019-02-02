@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 
 import './../css/index.css';
 import './../css/Header.css';
@@ -10,49 +12,36 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <nav id="header-nav" className="navbar navbar-default">
-          <div className="container">
-            <div className="navbar-header">
-              <div className="navbar-brand">
-                <a href="index.html">
-                  <h1>Chase Dreszer's Travel Photos</h1>
-                </a>
-              </div>
-              <button type="button" className="navbar-toggle collapsed d-md-none" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
-                <span className="sr-only">Toggle navigation</span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-              </button>
-            </div>
-            <div id="collapsable-nav" className="collapse navbar-collapse">
-               <ul id="nav-list" className="nav navbar-nav navbar-right">
-                <li>
-                  <a href="#"> About</a>
-                </li>
-                <li>
-                  <a href="#"x> Nature</a>
-                </li>
-                <li>
-                  <a href="#"x> People</a>
-                </li>
-                <li>
-                  <a href="#"x> Animals</a>
-                </li>
-                <li>
-                  <a href="#"> Contact</a>
-                </li>
-                <li id="phone" className="d-sm-block d-md-none">
-                  <a href="tel:858-395-6663">
-                    <span>858-395-6663</span></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+        <Navbar collapseOnSelect expand="md" variant="dark">
+          <Navbar.Brand href="#home">Chase Dreszer's Travel Photos</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto">
+            </Nav>
+            <Nav>
+              <Nav.Link href="#main-content">About</Nav.Link>
+              <Nav.Link href="#home-directory">Countries</Nav.Link>
+              <Nav.Link href="#nature">Nature</Nav.Link>
+              <Nav.Link href="#animals">Animals</Nav.Link>
+              <Nav.Link href="#contact-info">Contact</Nav.Link>
+              <Nav.Link id="phone" href="tel:858-395-6663" className="d-xs-none d-sm-block ">
+                <span>858-395-6663</span>
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
       </header> 
     );
   }
 }
 
 export default Header;
+
+//DROPDOWN MENU --- maybe make countries a dropdown
+              // <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+              //   <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              //   <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+              //   <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              //   <NavDropdown.Divider />
+              //   <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+              // </NavDropdown>
