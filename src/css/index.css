@@ -9,7 +9,7 @@ body {
   font-size: 16px;
   color: var(--text-color);
   /*background-color: var(--text-color);*/
-  background-color: #eee; /* light grey */
+  background-color: #fff; /* light grey */
   font-family: 'Carrois Gothic SC', sans-serif;
   letter-spacing: .05em; /* .1em standard */
 }
