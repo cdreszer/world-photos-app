@@ -3,11 +3,6 @@ import Row from 'react-bootstrap/Row';
 
 import Directory from "./Directory.js"
 
-// import athensImage from './../images/athens.JPG';
-// import sanImage from './../images/santorini-water.JPG';
-// import penicheImage from './../images/peniche.JPG';
-// import meImage from './../images/me-in-cop.jpg';
-
 import './../css/index.css';
 import './../css/DirectoryContainer.css';
 
@@ -19,31 +14,72 @@ class DirectoryContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      directory: '',
       directories: [
         {
-          name: "Santorini",
-          image: 'santorini-water.JPG'//sanImage
+          "name": "Bali Scooter",
+          "image": "Bali Scooter.JPG",
         },
         {
-          name: "Athens",
-          image: 'athens.JPG'//athensImage
+          "name": "Paris",
+          "image": "Paris.JPG",
         },
         {
-          name: "Peniche",
-          image: 'peniche.JPG'//penicheImage
+          "name": "P1010115",
+          "image": "P1010115.JPG",
         },
         {
-          name: "Copenhagen",
-          image: 'me-in-cop.jpg'
+          "name": "santorini-water",
+          "image": "santorini-water.JPG",
+        },
+        {
+          "name": "P1010071",
+          "image": "P1010071.JPG",
+        },
+        {
+          "name": "P1010138",
+          "image": "P1010138.JPG",
+        },
+        {
+          "name": "athens",
+          "image": "athens.JPG",
+        },
+        {
+          "name": "P1010072",
+          "image": "P1010072.JPG",
+        },
+        {
+          "name": "P1010107",
+          "image": "P1010107.JPG",
+        },
+        {
+          "name": "P1010152",
+          "image": "P1010152.JPG",
+        },
+        {
+          "name": "SanSebastian",
+          "image": "SanSebastian.JPG",
+        },
+        {
+          "name": "P1010120",
+          "image": "P1010120.JPG",
+        },
+        {
+          "name": "P1010086",
+          "image": "P1010086.JPG",
+        },
+        {
+          "name": "peniche",
+          "image": "peniche.JPG",
         }
         ]
     }
   }
 
   render() {
-    const directories = this.state.directories.map(dir => <Directory name={dir.name} image={dir.image}/>);
+    const directories = this.state.directories.map(dir => <Directory name={dir.name} directory={this.state.directory} image={dir.image}/>);
     return (
-      <Row className="DirectoryContainer row">
+      <Row id="home-directory" className="DirectoryContainer row">
         {directories}
       </Row>
     );

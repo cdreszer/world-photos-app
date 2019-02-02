@@ -1,4 +1,6 @@
 .DirectoryContainer {
   background-color: var(--primary);
   padding: 45px;
+/*  margin-left: 0%;
+  margin-right: 0%;*/
 }
