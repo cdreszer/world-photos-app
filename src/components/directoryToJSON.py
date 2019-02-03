@@ -18,11 +18,13 @@ for dirName, subdirList, fileList in os.walk(imagesDir):
    print('\t%s' % '"sub-directories": "' + str(subdirList) + '",')
    print('\t%s' % '"files": "' + str(fileList) + '",')
    print('\t%s' % '"images": [')
+
+   start = dirName.find(imagesDir) + len(imagesDir)
+   dirName = dirName[start:]
    # traverses all files
    for fname in fileList:
-     # finds the end index of ./images/ to use as start point and removes it
-     start = dirName.find(imagesDir) + len(imagesDir)
-     dirName = dirName[start:]
+     # finds the end index of ./../images/ to use as start point and removes it
+
      # removes .JPG or jpg from file Name
      noExtension = fname[:fname.lower().find('.JPG'.lower())]
      print('\t\t%s' % '{')

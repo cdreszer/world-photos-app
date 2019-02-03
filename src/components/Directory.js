@@ -27,8 +27,11 @@ class Directory extends Component {
   handleClick(e) {
     e.preventDefault();
     console.log("directory clicked from " + this.props.name)
+
     // DISPATCH AN EVENT WITH SOME INFO
-    this.props.dispatch(displayPage({display: "IMAGE_CAROUSEL", imagePath: this.props.image}));
+    this.props.dispatch(displayPage({display: "IMAGE_CAROUSEL", imagePath: this.props.name}));
+
+    // USES PASSED THROUGH METHOD
     // this.props.displayPage("DISPLAY_PAGE", {display: "IMAGE_CAROUSEL", imagePath: this.props.image});
   }
 

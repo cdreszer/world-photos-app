@@ -7,6 +7,7 @@ import ImageBio from "./ImageBio.js";
 import ImageGalleryCarousel from "./ImageGalleryCarousel.js";
 
 import { displayPage } from '../actions'
+import { directories as jsonDirectories } from './jsonFileLoader.js'
 
 import './../css/index.css';
 import './../css/MainContent.css';
@@ -25,7 +26,9 @@ class MainContent extends Component {
 
     this.state = {
       display: "HOME_PAGE",
-      imagePath: ""
+      imagePath: "",
+      directories: jsonDirectories
+
     };
 
     this.homePage = this.homePage.bind(this);
@@ -37,8 +40,9 @@ class MainContent extends Component {
   }
 
   /**
-    Passes to child, should be a better way to do this...
-    currently unused
+    Passes to child, and then sets state.
+    Should be a better way to do this...
+    CURRENTLY UNUSED
   */
   updateContent(type, content) {
    //  switch (type) {
@@ -57,8 +61,24 @@ class MainContent extends Component {
 
   componentWillReceiveProps(nextProps){
     if (nextProps.display !== this.props.display) {
-      this.setState({display: nextProps.display});
+      this.setState({display: nextProps.display, imagePath: nextProps.imagePath});
     }
+  }
+
+  componentDidUpdate() {
+    // On main content update moves scroll to top of the page.
+    window.scrollTo(0, 0);
+  }
+
+  /** 
+    Given an array of directories and an image path, returns
+    an array of images within the directory.
+  */
+  getImagesFromPath(directories, imgPath) {
+    const path = './../images/' + imgPath;
+    var directory = directories.find((dir) => dir.directory === path);
+
+    return directory.images;
   }
 
   /** 
@@ -83,7 +103,7 @@ class MainContent extends Component {
   }
 
   imageGalleryCarouselPage(props) {
-    return <ImageGalleryCarousel/>;
+    return <ImageGalleryCarousel images={this.getImagesFromPath(this.state.directories, this.state.imagePath)}/>;
   }
 
   homePage(props) {
@@ -91,17 +111,17 @@ class MainContent extends Component {
       <div>
         <ImageBio id="bio" text="hello. my name is chase dreszer, 
         these are some of the pictures from my travels"/>
-        <DirectoryContainer displayPage={this.updateContent}/>
+        <DirectoryContainer />
       </div>
     );
   }
 
   renderContent() {
     switch (this.state.display) {
-      case 'HOME_PAGE':
-         return this.homePage();
+      case 'IMAGE_CAROUSEL':
+        return this.imageGalleryCarouselPage();
       default:
-         return this.imageGalleryCarouselPage();
+         return this.homePage();
     }
   }
 

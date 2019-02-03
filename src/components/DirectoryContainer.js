@@ -16,63 +16,27 @@ class DirectoryContainer extends Component {
     this.state = {
       directory: '',
       directories: [
-        {
-          "name": "Bali Scooter",
-          "image": "Bali Scooter.JPG",
-        },
-        {
-          "name": "Paris",
-          "image": "Paris.JPG",
-        },
-        {
-          "name": "P1010115",
-          "image": "P1010115.JPG",
-        },
-        {
-          "name": "santorini-water",
-          "image": "santorini-water.JPG",
-        },
-        {
-          "name": "P1010071",
-          "image": "P1010071.JPG",
-        },
-        {
-          "name": "P1010138",
-          "image": "P1010138.JPG",
-        },
-        {
-          "name": "athens",
-          "image": "athens.JPG",
-        },
-        {
-          "name": "P1010072",
-          "image": "P1010072.JPG",
-        },
-        {
-          "name": "P1010107",
-          "image": "P1010107.JPG",
-        },
-        {
-          "name": "P1010152",
-          "image": "P1010152.JPG",
-        },
-        {
-          "name": "SanSebastian",
-          "image": "SanSebastian.JPG",
-        },
-        {
-          "name": "P1010120",
-          "image": "P1010120.JPG",
-        },
-        {
-          "name": "P1010086",
-          "image": "P1010086.JPG",
-        },
-        {
-          "name": "peniche",
-          "image": "peniche.JPG",
-        }
-        ]
+    {
+      "name": "Bali",
+      "image": "Bali.JPG",
+    },
+    {
+      "name": "Greece",
+      "image": "Greece.JPG",
+    },
+    {
+      "name": "Paris",
+      "image": "Paris.JPG",
+    },
+    {
+      "name": "Portugal",
+      "image": "Portugal.JPG",
+    },
+    {
+      "name": "Spain",
+      "image": "Spain.JPG",
+    },
+  ]
     }
   }
 
