@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+
+import {displayPage} from '../actions'
 
 import './../css/index.css';
 import './../css/Header.css';
@@ -9,11 +12,24 @@ import './../css/Header.css';
     Header for the site. Should display title and collapsable menu buttons.
 */
 class Header extends Component {
+  constructor(props) {
+    super(props);
+
+    this.returnToHomePage = this.returnToHomePage.bind(this);
+  }
+
+  // returns back to the home page
+  returnToHomePage(e) {
+    e.preventDefault();
+    console.log("Navbar brand clicked --> return home")
+    this.props.dispatch(displayPage({display: "HOME_PAGE", imagePath: ""}));
+  }
+
   render() {
     return (
       <header>
         <Navbar collapseOnSelect expand="md" variant="dark">
-          <Navbar.Brand href="#home">Chase Dreszer's Travel Photos</Navbar.Brand>
+          <Navbar.Brand onClick={this.returnToHomePage}>Chase Dreszer's Travel Photos</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
@@ -35,7 +51,7 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default connect()(Header);
 
 //DROPDOWN MENU --- maybe make countries a dropdown
               // <NavDropdown title="Dropdown" id="collasible-nav-dropdown">

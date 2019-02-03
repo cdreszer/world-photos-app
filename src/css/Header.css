@@ -8,6 +8,7 @@
 
 /* Top nav bar */
 .navbar-brand {
+  cursor: pointer;
   padding-top: 15px;
 }
 

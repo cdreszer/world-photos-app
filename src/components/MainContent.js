@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import Container from 'react-bootstrap/Container';
 
 import DirectoryContainer from "./DirectoryContainer.js";
 import ImageBio from "./ImageBio.js";
 import ImageGalleryCarousel from "./ImageGalleryCarousel.js";
+
+import { displayPage } from '../actions'
 
 import './../css/index.css';
 import './../css/MainContent.css';
@@ -20,9 +23,42 @@ class MainContent extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      display: "HOME_PAGE",
+      imagePath: ""
+    };
+
     this.homePage = this.homePage.bind(this);
     this.xsContactInfo = this.xsContactInfo.bind(this);
     this.imageGalleryCarouselPage = this.imageGalleryCarouselPage.bind(this);
+    this.updateContent = this.updateContent.bind(this);
+    this.renderContent = this.renderContent.bind(this);
+
+  }
+
+  /**
+    Passes to child, should be a better way to do this...
+    currently unused
+  */
+  updateContent(type, content) {
+   //  switch (type) {
+   //    case 'DISPLAY_PAGE':
+   //      // Updates props
+   //      this.props.displayPageDispatch(content);
+
+   //      // SET STATE
+   //      //this.setState({display: content.display, imagePath: content.imagePath});
+   //      // this.setState({display: this.props.display, imagePath: this.props.imagePath});
+   //      break;
+   //    default:
+   //      return ;
+   // }
+  }
+
+  componentWillReceiveProps(nextProps){
+    if (nextProps.display !== this.props.display) {
+      this.setState({display: nextProps.display});
+    }
   }
 
   /** 
@@ -55,18 +91,39 @@ class MainContent extends Component {
       <div>
         <ImageBio id="bio" text="hello. my name is chase dreszer, 
         these are some of the pictures from my travels"/>
-        <DirectoryContainer/>
+        <DirectoryContainer displayPage={this.updateContent}/>
       </div>
     );
+  }
+
+  renderContent() {
+    switch (this.state.display) {
+      case 'HOME_PAGE':
+         return this.homePage();
+      default:
+         return this.imageGalleryCarouselPage();
+    }
   }
 
   render() {
     return (
       <Container id="main-content" >
-         {this.homePage()}
+         {this.renderContent()}
       </Container>
     );
   }
 }
 
-export default MainContent;
+const mapStateToProps = (state) => {
+  return {display: state.displayPage.display, imagePath: state.displayPage.imagePath}
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    displayPageDispatch: (message) => {
+      dispatch(displayPage(message))
+    }
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainContent);

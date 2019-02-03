@@ -77,7 +77,8 @@ class DirectoryContainer extends Component {
   }
 
   render() {
-    const directories = this.state.directories.map(dir => <Directory name={dir.name} directory={this.state.directory} image={dir.image}/>);
+    const directories = this.state.directories.map((dir, index) => 
+      <Directory displayPage={this.props.displayPage} key={index} name={dir.name} directory={this.state.directory} image={dir.image}/>);
     return (
       <Row id="home-directory" className="DirectoryContainer row">
         {directories}
