@@ -1,0 +1,143 @@
+//image loader
+
+export const directories = [
+  {
+  "directory": "./../images/",
+  "sub-directories": "['Paris', 'Bali', 'Spain', 'Portugal', 'Greece', 'Copenhagen']",
+  "files": "['me-in-cop.jpg', 'Paris.JPG', 'Bali.JPG', 'Greece.JPG', 'Spain.JPG', 'Portugal.JPG']",
+  "images": [
+    {
+      "name": "me-in-cop",
+      "image": "me-in-cop.jpg",
+    },
+    {
+      "name": "Paris",
+      "image": "Paris.JPG",
+    },
+    {
+      "name": "Bali",
+      "image": "Bali.JPG",
+    },
+    {
+      "name": "Greece",
+      "image": "Greece.JPG",
+    },
+    {
+      "name": "Spain",
+      "image": "Spain.JPG",
+    },
+    {
+      "name": "Portugal",
+      "image": "Portugal.JPG",
+    },
+  ]},
+  {
+  "directory": "./../images/Paris",
+  "sub-directories": "[]",
+  "files": "['France.JPG']",
+  "images": [
+    {
+      "name": "France",
+      "image": "Paris/France.JPG",
+    },
+  ]},
+  {
+  "directory": "./../images/Bali",
+  "sub-directories": "[]",
+  "files": "['Bali.JPG']",
+  "images": [
+    {
+      "name": "Bali",
+      "image": "Bali/Bali.JPG",
+    },
+  ]},
+  {
+  "directory": "./../images/Spain",
+  "sub-directories": "[]",
+  "files": "['P1010152.JPG', 'SanSebastian.JPG', 'P1010120.JPG']",
+  "images": [
+    {
+      "name": "P1010152",
+      "image": "Spain/P1010152.JPG",
+    },
+    {
+      "name": "SanSebastian",
+      "image": "Spain/SanSebastian.JPG",
+    },
+    {
+      "name": "P1010120",
+      "image": "Spain/P1010120.JPG",
+    },
+  ]},
+  {
+  "directory": "./../images/Portugal",
+  "sub-directories": "[]",
+  "files": "['P1010115.JPG', 'P1010071.JPG', 'P1010138.JPG', 'P1010072.JPG', 'P1010107.JPG', 'P1010086.JPG', 'peniche.JPG']",
+  "images": [
+    {
+      "name": "P1010115",
+      "image": "Portugal/P1010115.JPG",
+    },
+    {
+      "name": "P1010071",
+      "image": "Portugal/P1010071.JPG",
+    },
+    {
+      "name": "P1010138",
+      "image": "Portugal/P1010138.JPG",
+    },
+    {
+      "name": "P1010072",
+      "image": "Portugal/P1010072.JPG",
+    },
+    {
+      "name": "P1010107",
+      "image": "Portugal/P1010107.JPG",
+    },
+    {
+      "name": "P1010086",
+      "image": "Portugal/P1010086.JPG",
+    },
+    {
+      "name": "peniche",
+      "image": "Portugal/peniche.JPG",
+    },
+  ]},
+  {
+  "directory": "./../images/Greece",
+  "sub-directories": "['Santorini', 'Athens']",
+  "files": "['santorini-water.JPG', 'athens.JPG']",
+  "images": [
+    {
+      "name": "santorini-water",
+      "image": "Greece/santorini-water.JPG",
+    },
+    {
+      "name": "athens",
+      "image": "Greece/athens.JPG",
+    },
+  ]},
+  {
+  "directory": "./../images/Greece/Santorini",
+  "sub-directories": "[]",
+  "files": "[]",
+  "images": [
+  ]},
+  {
+  "directory": "./../images/Greece/Athens",
+  "sub-directories": "[]",
+  "files": "[]",
+  "images": [
+  ]},
+  {
+  "directory": "./../images/Copenhagen",
+  "sub-directories": "[]",
+  "files": "[]",
+  "images": [
+  ]},
+];
+
+// wrtie a function to extract ^^^ json from file
+export default function jsonFileLoader() {
+   
+}
