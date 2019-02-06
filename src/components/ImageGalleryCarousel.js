@@ -22,11 +22,11 @@ class ImageGalleryCarousel extends React.Component {
     this.setState({
       index: selectedIndex,
       direction: e.direction,
-      images: [...this.state.images]
+      images: [...this.props.images]
     });
   }
 
-  /** Needed to place inside here for whatever reason */
+  /** Each carousel item. */
   imageGalleryCarouselItem(props) {
     const imageURI = require('./../images/' + props.image);
     return (
@@ -49,7 +49,7 @@ class ImageGalleryCarousel extends React.Component {
     const { index, direction, images } = this.state;
     let slide = 1;
     const carouselItems = images.map(im => 
-      this.imageGalleryCarouselItem({image:im.image, slide:slide++, name:im.name, desc:"Blah Blah Blah"}));
+      this.imageGalleryCarouselItem({image:im.image, slide:slide++, name:im.name, desc:im.desc}));
 
     return (
       <div id="image-gallery-container">
@@ -62,7 +62,7 @@ class ImageGalleryCarousel extends React.Component {
         >
           {carouselItems}
         </Carousel>
-        <span id="country-title">{this.state.country || "2018"}</span>
+        <span id="country-title">{this.props.title}</span>
       </div>
     );
   }
@@ -70,3 +70,7 @@ class ImageGalleryCarousel extends React.Component {
 
 
 export default ImageGalleryCarousel;
+
+
+//  glyphicon glyphicon-th -- gallery icon
+//  glyphicon glyphicon-edit -- edit

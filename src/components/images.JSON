@@ -1,13 +1,9 @@
 [
 	{
 	"directory": "./../images/",
-	"sub-directories": "['Paris', 'Bali', 'Spain', 'Portugal', 'Greece', 'Copenhagen']",
-	"files": "['me-in-cop.jpg', 'Paris.JPG', 'Bali.JPG', 'Greece.JPG', 'Spain.JPG', 'Portugal.JPG']",
+	"sub-directories": "['Paris', 'Bali', 'Spain', 'Australia', 'Portugal', 'Hawaii', 'New Zealand', 'Puerto Escondido', 'Greece', 'Copenhagen']",
+	"files": "['Paris.JPG', 'Bali.JPG', 'Greece.JPG', 'Spain.JPG', 'Portugal.JPG']",
 	"images": [
-		{
-			"name": "me-in-cop",
-			"image": "me-in-cop.jpg",
-		},
 		{
 			"name": "Paris",
 			"image": "Paris.JPG",
@@ -52,54 +48,78 @@
 	{
 	"directory": "./../images/Spain",
 	"sub-directories": "[]",
-	"files": "['P1010152.JPG', 'SanSebastian.JPG', 'P1010120.JPG']",
+	"files": "['Road From Portugal.JPG', 'San Sebastian.JPG', 'Mundaka.JPG', 'Zarautz.JPG']",
 	"images": [
 		{
-			"name": "P1010152",
-			"image": "Spain/P1010152.JPG",
+			"name": "Road From Portugal",
+			"image": "Spain/Road From Portugal.JPG",
 		},
 		{
-			"name": "SanSebastian",
-			"image": "Spain/SanSebastian.JPG",
+			"name": "San Sebastian",
+			"image": "Spain/San Sebastian.JPG",
 		},
 		{
-			"name": "P1010120",
-			"image": "Spain/P1010120.JPG",
+			"name": "Mundaka",
+			"image": "Spain/Mundaka.JPG",
 		},
+		{
+			"name": "Zarautz",
+			"image": "Spain/Zarautz.JPG",
+		},
+	]},
+	{
+	"directory": "./../images/Australia",
+	"sub-directories": "[]",
+	"files": "[]",
+	"images": [
 	]},
 	{
 	"directory": "./../images/Portugal",
 	"sub-directories": "[]",
-	"files": "['P1010115.JPG', 'P1010071.JPG', 'P1010138.JPG', 'P1010072.JPG', 'P1010107.JPG', 'P1010086.JPG', 'peniche.JPG']",
+	"files": "['porto-moon.JPG', 'espinho.JPG', 'porto-bridges.JPG', 'porto-boat.JPG', 'porto-flag.JPG', 'peniche.JPG']",
 	"images": [
 		{
-			"name": "P1010115",
-			"image": "Portugal/P1010115.JPG",
+			"name": "porto-moon",
+			"image": "Portugal/porto-moon.JPG",
 		},
 		{
-			"name": "P1010071",
-			"image": "Portugal/P1010071.JPG",
+			"name": "espinho",
+			"image": "Portugal/espinho.JPG",
 		},
 		{
-			"name": "P1010138",
-			"image": "Portugal/P1010138.JPG",
+			"name": "porto-bridges",
+			"image": "Portugal/porto-bridges.JPG",
 		},
 		{
-			"name": "P1010072",
-			"image": "Portugal/P1010072.JPG",
+			"name": "porto-boat",
+			"image": "Portugal/porto-boat.JPG",
 		},
 		{
-			"name": "P1010107",
-			"image": "Portugal/P1010107.JPG",
-		},
-		{
-			"name": "P1010086",
-			"image": "Portugal/P1010086.JPG",
+			"name": "porto-flag",
+			"image": "Portugal/porto-flag.JPG",
 		},
 		{
 			"name": "peniche",
 			"image": "Portugal/peniche.JPG",
 		},
+	]},
+	{
+	"directory": "./../images/Hawaii",
+	"sub-directories": "[]",
+	"files": "[]",
+	"images": [
+	]},
+	{
+	"directory": "./../images/New Zealand",
+	"sub-directories": "[]",
+	"files": "[]",
+	"images": [
+	]},
+	{
+	"directory": "./../images/Puerto Escondido",
+	"sub-directories": "[]",
+	"files": "[]",
+	"images": [
 	]},
 	{
 	"directory": "./../images/Greece",

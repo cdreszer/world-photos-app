@@ -7,7 +7,6 @@ import ImageBio from "./ImageBio.js";
 import ImageGalleryCarousel from "./ImageGalleryCarousel.js";
 
 import { displayPage } from '../actions'
-import { directories as jsonDirectories } from './jsonFileLoader.js'
 
 import './../css/index.css';
 import './../css/MainContent.css';
@@ -16,9 +15,11 @@ import './../css/MainContent.css';
     Main content displayed to the user between header and footer.
 
     IDEAS: 
-      - travel map that is clickable that reroutes to page
+      - travel map that is clickable that reroutes to page (maybe add editable lon,lat on image gallery page)
       - image title, desc, file name, country, region, etc. in JSON objects (maybe mongoDB)
       - different types of views for images, carousel, magazine style, slides, etc.
+      - allow for editing image descriptions and titles (preserve it)
+      - maybe add a cart feature and gallery size chooser etc.
 */
 class MainContent extends Component {
   constructor(props) {
@@ -27,8 +28,7 @@ class MainContent extends Component {
     this.state = {
       display: "HOME_PAGE",
       imagePath: "",
-      directories: jsonDirectories
-
+      directories: this.props.directories
     };
 
     this.homePage = this.homePage.bind(this);
@@ -62,6 +62,9 @@ class MainContent extends Component {
   componentWillReceiveProps(nextProps){
     if (nextProps.display !== this.props.display) {
       this.setState({display: nextProps.display, imagePath: nextProps.imagePath});
+    }
+    else if (nextProps.imagePath !== this.props.imagePath) {
+      this.setState({imagePath: nextProps.imagePath});
     }
   }
 
@@ -103,7 +106,7 @@ class MainContent extends Component {
   }
 
   imageGalleryCarouselPage(props) {
-    return <ImageGalleryCarousel images={this.getImagesFromPath(this.state.directories, this.state.imagePath)}/>;
+    return <ImageGalleryCarousel title={this.state.imagePath} images={this.getImagesFromPath(this.state.directories, this.state.imagePath)}/>;
   }
 
   homePage(props) {
@@ -111,7 +114,7 @@ class MainContent extends Component {
       <div>
         <ImageBio id="bio" text="hello. my name is chase dreszer, 
         these are some of the pictures from my travels"/>
-        <DirectoryContainer />
+        <DirectoryContainer directories={this.state.directories}/>
       </div>
     );
   }
@@ -147,3 +150,9 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainContent);
+
+// Copenhagen Video AutoPlay
+    // const vid = require('./../video/CopenhagenPigeons.MP4')
+    //     <video autoPlay loop muted>
+    //       <source src={vid} type="video/mp4"/>
+    //     </video>

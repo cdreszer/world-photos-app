@@ -15,33 +15,13 @@ class DirectoryContainer extends Component {
     super(props);
     this.state = {
       directory: '',
-      directories: [
-    {
-      "name": "Bali",
-      "image": "Bali.JPG",
-    },
-    {
-      "name": "Greece",
-      "image": "Greece.JPG",
-    },
-    {
-      "name": "Paris",
-      "image": "Paris.JPG",
-    },
-    {
-      "name": "Portugal",
-      "image": "Portugal.JPG",
-    },
-    {
-      "name": "Spain",
-      "image": "Spain.JPG",
-    },
-  ]
+      directories: [...this.props.directories]
     }
   }
 
   render() {
-    const directories = this.state.directories.map((dir, index) => 
+    const topLevelDirectories = this.state.directories[0].images;
+    const directories = topLevelDirectories.map((dir, index) => 
       <Directory displayPage={this.props.displayPage} key={index} name={dir.name} directory={this.state.directory} image={dir.image}/>);
     return (
       <Row id="home-directory" className="DirectoryContainer row">

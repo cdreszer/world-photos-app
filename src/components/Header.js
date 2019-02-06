@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import {displayPage} from '../actions'
 
@@ -16,6 +17,7 @@ class Header extends Component {
     super(props);
 
     this.returnToHomePage = this.returnToHomePage.bind(this);
+    this.goToCountry = this.goToCountry.bind(this);
   }
 
   // returns back to the home page
@@ -25,7 +27,20 @@ class Header extends Component {
     this.props.dispatch(displayPage({display: "HOME_PAGE", imagePath: ""}));
   }
 
+  // Goes to image caousel page for country x
+  // CURRENTLY BUG IF ALREADY INSIDE OF AN IMAGE GALLERY 
+  goToCountry(e) {
+    e.preventDefault();
+    console.log("Navbar country clicked --> go to " + e.currentTarget.id)
+    this.props.dispatch(displayPage({display: "IMAGE_CAROUSEL", imagePath: e.currentTarget.id}));
+  }
+
+
   render() {
+    let locationList = this.props.directories[0]["sub-directories"].sort();
+    const locations = locationList.map((loc) => 
+      <NavDropdown.Item id={loc} onClick={this.goToCountry}>{loc}</NavDropdown.Item>);
+
     return (
       <header>
         <Navbar collapseOnSelect expand="md" variant="dark">
@@ -36,7 +51,9 @@ class Header extends Component {
             </Nav>
             <Nav>
               <Nav.Link href="#main-content">About</Nav.Link>
-              <Nav.Link href="#home-directory">Countries</Nav.Link>
+              <NavDropdown title="Locations" id="collasible-nav-dropdown">
+                {locations}
+              </NavDropdown>
               <Nav.Link href="#nature">Nature</Nav.Link>
               <Nav.Link href="#animals">Animals</Nav.Link>
               <Nav.Link href="#contact-info">Contact</Nav.Link>
@@ -52,12 +69,3 @@ class Header extends Component {
 }
 
 export default connect()(Header);
-
-//DROPDOWN MENU --- maybe make countries a dropdown
-              // <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-              //   <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              //   <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-              //   <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              //   <NavDropdown.Divider />
-              //   <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-              // </NavDropdown>

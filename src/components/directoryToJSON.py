@@ -3,19 +3,23 @@ import os, sys
 
 # Redirects sys.stdout to images.JSON
 orig_stdout = sys.stdout
-f = open('images.JSON', 'w')
+f = open('images.js', 'w')
 sys.stdout = f
+
+SKIP_FILES = ['.DS_Store', 'README.md', 'me-in-cop.jpg']
 
 # Set the directory you want to start from
 imagesDir = './../images/'
-print('[')
+print('export const directories = [')
 for dirName, subdirList, fileList in os.walk(imagesDir):
-   # Removes .DS_Store from file list if it appears
-   if '.DS_Store' in fileList:
-      fileList.remove('.DS_Store')
+   # Removes file from file list if it appears in SKIP_FILES
+   for file in SKIP_FILES:
+      if file in fileList:
+        fileList.remove(file)
+
    print('\t{')
    print('\t%s' % '"directory": "' + dirName + '",')
-   print('\t%s' % '"sub-directories": "' + str(subdirList) + '",')
+   print('\t%s' % '"sub-directories": ' + str(subdirList) + ',')
    print('\t%s' % '"files": "' + str(fileList) + '",')
    print('\t%s' % '"images": [')
 
@@ -32,14 +36,12 @@ for dirName, subdirList, fileList in os.walk(imagesDir):
      # Checks if at top level -- (./images/)
      if dirName:
          print('\t\t\t%s' % '"image": "' + dirName + "/" + fname + '",')
-         # print('\t\t\t%s' % '"isDir": "false"')
      else:
          print('\t\t\t%s' % '"image": "' + fname + '",')
-         # print('\t\t\t%s' % '"isDir": "true",')
-         # print('\t\t\t%s' % '"sub-directories": "' + str(subdirList) + '",')
+
      print('\t\t%s' % '},')
    print('\t]},')
-print(']')
+print('];')
 
 # Resets sys.stdout and closes file 
 sys.stdout = orig_stdout
