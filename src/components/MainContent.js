@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Container from 'react-bootstrap/Container';
 
-import DirectoryContainer from "./DirectoryContainer.js";
-import ImageBio from "./ImageBio.js";
+import HomePage from "./HomePage.js"
 import ImageGalleryCarousel from "./ImageGalleryCarousel.js";
+import ParallaxPage from "./ParallaxPage.js";
 
 import { displayPage } from '../actions'
 
@@ -13,6 +13,15 @@ import './../css/MainContent.css';
 
 /** 
     Main content displayed to the user between header and footer.
+
+    LOOK INTO REACT-ROUTER-DOM : probably what I should be using to redirect content.
+      <Switch>
+        <Route path="/home" component={() => <HomePage directories={this.state.directories}/>}>
+        <Route path="/location/:locName" component={({match}) => <ImageGalleryCarousel title={this.state.imagePath} images={this.getImagesFromPath(this.state.directories, this.state.imagePath)}/>}>
+        <Redirect to="/home">
+      </Switch>
+
+      ^ use match.params.locName to find which images to use
 
     IDEAS: 
       - travel map that is clickable that reroutes to page (maybe add editable lon,lat on image gallery page)
@@ -28,38 +37,14 @@ class MainContent extends Component {
     this.state = {
       display: "HOME_PAGE",
       imagePath: "",
-      directories: this.props.directories
+      directories: this.props.directories,
     };
 
-    this.homePage = this.homePage.bind(this);
-    this.xsContactInfo = this.xsContactInfo.bind(this);
-    this.imageGalleryCarouselPage = this.imageGalleryCarouselPage.bind(this);
-    this.updateContent = this.updateContent.bind(this);
+    // this.updateContent = this.updateContent.bind(this);
     this.renderContent = this.renderContent.bind(this);
-
   }
 
-  /**
-    Passes to child, and then sets state.
-    Should be a better way to do this...
-    CURRENTLY UNUSED
-  */
-  updateContent(type, content) {
-   //  switch (type) {
-   //    case 'DISPLAY_PAGE':
-   //      // Updates props
-   //      this.props.displayPageDispatch(content);
-
-   //      // SET STATE
-   //      //this.setState({display: content.display, imagePath: content.imagePath});
-   //      // this.setState({display: this.props.display, imagePath: this.props.imagePath});
-   //      break;
-   //    default:
-   //      return ;
-   // }
-  }
-
-  componentWillReceiveProps(nextProps){
+  componentWillReceiveProps(nextProps) {
     if (nextProps.display !== this.props.display) {
       this.setState({display: nextProps.display, imagePath: nextProps.imagePath});
     }
@@ -73,7 +58,7 @@ class MainContent extends Component {
     window.scrollTo(0, 0);
   }
 
-  /** 
+ /** 
     Given an array of directories and an image path, returns
     an array of images within the directory.
   */
@@ -84,47 +69,12 @@ class MainContent extends Component {
     return directory.images;
   }
 
-  /** 
-    Shows phone number and email directly at top on mobile devices. 
-    ** NEEDS TO BE STYLIZED
-  */
-  xsContactInfo(props) {
-    return (
-      <div>
-        <div id="call-btn" class="text-center d-xs-block d-sm-none">
-          <a class="btn" href="tel:858-395-6663">
-          <span class="glyphicon glyphicon-earphone"></span>
-          858-395-6663
-          </a>
-        </div>
-        <div id="email" class="text-center d-xs-block d-sm-none">
-          <span class="glyphicon glyphicon-envelope"></span>
-          chasedreszer@gmail.com
-        </div>
-      </div>
-    );
-  }
-
-  imageGalleryCarouselPage(props) {
-    return <ImageGalleryCarousel title={this.state.imagePath} images={this.getImagesFromPath(this.state.directories, this.state.imagePath)}/>;
-  }
-
-  homePage(props) {
-    return (
-      <div>
-        <ImageBio id="bio" text="hello. my name is chase dreszer, 
-        these are some of the pictures from my travels"/>
-        <DirectoryContainer directories={this.state.directories}/>
-      </div>
-    );
-  }
-
   renderContent() {
     switch (this.state.display) {
       case 'IMAGE_CAROUSEL':
-        return this.imageGalleryCarouselPage();
+        return <ImageGalleryCarousel title={this.state.imagePath} images={this.getImagesFromPath(this.state.directories, this.state.imagePath)}/>;
       default:
-         return this.homePage();
+         return <HomePage directories={this.state.directories}/>;
     }
   }
 
@@ -138,7 +88,7 @@ class MainContent extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {display: state.displayPage.display, imagePath: state.displayPage.imagePath}
+  return {display: state.displayPage.display, imagePath: state.displayPage.imagePath, directories: state.displayPage.directories}
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -150,9 +100,24 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainContent);
+// USE withRouter(connect...)
 
-// Copenhagen Video AutoPlay
-    // const vid = require('./../video/CopenhagenPigeons.MP4')
-    //     <video autoPlay loop muted>
-    //       <source src={vid} type="video/mp4"/>
-    //     </video>
+  /**
+    Passes to child, and then sets state.
+    Should be a better way to do this...
+    CURRENTLY UNUSED
+  */
+  // updateContent(type, content) {
+  //   switch (type) {
+  //     case 'DISPLAY_PAGE':
+  //       // Updates props
+  //       this.props.displayPageDispatch(content);
+
+  //       // SET STATE
+  //       //this.setState({display: content.display, imagePath: content.imagePath});
+  //       // this.setState({display: this.props.display, imagePath: this.props.imagePath});
+  //       break;
+  //     default:
+  //       return ;
+  //  }
+  // }

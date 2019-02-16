@@ -19,11 +19,12 @@ class App extends Component {
       };
   }
 
+  // <BrowserRouter></BrowserRouter>
    render() {
     return (
       <div>
         <Header directories={this.state.directories}/>
-        <MainContent directories={this.state.directories}/>
+        <MainContent directories={this.state.directories} fluid/>
         <Footer />
       </div>
     );

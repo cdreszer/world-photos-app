@@ -35,6 +35,8 @@ class Directory extends Component {
     // this.props.displayPage("DISPLAY_PAGE", {display: "IMAGE_CAROUSEL", imagePath: this.props.image});
   }
 
+  // Could change to use <Link to={`/location/${this.props.name}`} > from react-router-dom
+
   render() {
     const imageURI = require('./../images/' + this.props.image);
     return (

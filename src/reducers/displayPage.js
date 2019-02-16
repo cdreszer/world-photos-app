@@ -1,6 +1,9 @@
-const initialState = {
+import { directories as DIRECTORIES } from './../components/images.js'
+
+export const initialState = {
    display: "HOME_PAGE", 
-   imagePath: ""
+   imagePath: "",
+   directories: DIRECTORIES
 };
 
 const displayPage = (state= initialState, action) => {
@@ -8,7 +11,8 @@ const displayPage = (state= initialState, action) => {
       case 'DISPLAY_PAGE':
          return {
             display: action.content.display,
-            imagePath: action.content.imagePath
+            imagePath: action.content.imagePath,
+            directories: [...state.directories]
          };
       default:
          return state;

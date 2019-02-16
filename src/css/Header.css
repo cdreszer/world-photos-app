@@ -41,27 +41,6 @@ navbar-brand h1 {
   height: 1em;
 }
 
-video {
-  width: 100%;
-  height: auto;
-}
-
-@media (max-width: 479px) {
-  .navbar-brand {
-    font-size: 1em;
-  }
-
-  .col-xxs-12 {
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-    float: left;
-    width: 100%;
-  }
-}
-
-
 /********** Large devices only **********/
 @media (min-width: 1200px) {
 
@@ -81,12 +60,17 @@ video {
 
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
-
+  .dropdown-item {
+    text-align: center;
+  }
 }
 
 
 /********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
 @media (max-width: 479px) {
+  .navbar-brand {
+    font-size: 1em;
+  }
 
   .col-xxs-12 {
     position: relative;

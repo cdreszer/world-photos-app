@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Image from 'react-bootstrap/Image';
 
-import meImage from './../images/me-in-cop.jpg';
+import meImage from './../images/BIO.jpg';
 
 import './../css/index.css';
 import './../css/ImageBio.css';

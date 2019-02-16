@@ -1,0 +1,59 @@
+
+/* 
+Images:
+   Portugal.JPG
+   Portugal/P1000920.JPG
+   Portugal/espinho.JPG
+   New Zealand/Asset0025.jpg
+*/
+
+.parallax-caption {
+   margin: 50px 50px;
+   padding: 50px 50px;
+   /*background-color: var(--secondary);*/
+   background-color: var(--primary);
+   color: white;
+   text-align: center;
+}
+
+.peniche { 
+  /* The image used */
+  background-image: url("./../images/Portugal.JPG");
+
+  /* Set a specific height */
+  height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.espinho { 
+  /* The image used */
+  background-image: url("./../images/Portugal/espinho.JPG");
+
+  /* Set a specific height */
+  height: 350px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.changing { 
+  /* The image used */
+  background-image: url("./../images/New Zealand/Asset0025.jpg");
+
+  /* Set a specific height */
+  height: 400px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
