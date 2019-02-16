@@ -13,18 +13,14 @@ import './css/App.css';
 class App extends Component {
    constructor(props) {  
       super(props);
-
-      this.state = {
-         directories: jsonDirectories
-      };
   }
 
   // <BrowserRouter></BrowserRouter>
    render() {
     return (
       <div>
-        <Header directories={this.state.directories}/>
-        <MainContent directories={this.state.directories} fluid/>
+        <Header />
+        <MainContent />
         <Footer />
       </div>
     );

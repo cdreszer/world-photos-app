@@ -88,4 +88,8 @@ class Header extends Component {
   }
 }
 
-export default connect()(Header);
+const mapStateToProps = (state) => {
+  return {directories: state.directories}
+};
+
+export default connect(mapStateToProps)(Header);

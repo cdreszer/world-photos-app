@@ -88,7 +88,7 @@ class MainContent extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {display: state.displayPage.display, imagePath: state.displayPage.imagePath, directories: state.displayPage.directories}
+  return {display: state.displayPage.display, imagePath: state.displayPage.imagePath, directories: state.directories}
 };
 
 const mapDispatchToProps = (dispatch) => {
