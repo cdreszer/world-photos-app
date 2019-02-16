@@ -9,8 +9,20 @@ In the project directory, you can run:
 Runs a python script that creates a JS object from the "images" directory.<br>
 Then runs the app using npm start.
 
-In top images directory, name each image that is to act as a cover photo the directory name.
-Cover of a directory named "Portugal" should be named "Portugal.JPG".
+In top images directory, name each image that is to act as a cover photo the directory name.<br>
+   ex: Cover of a directory named "Portugal" should be named "Portugal.JPG". 
+         \Hawaii
+            -- P10200
+            -- P10201
+         Hawaii.JPG
+         \Portugal
+            -- P10202
+            -- P10203
+         Portugal.JPG
+         \Spain
+            -- P10204
+            -- P10205
+
 
 ### `npm start`
 
