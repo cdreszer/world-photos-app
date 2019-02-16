@@ -9,18 +9,13 @@ import './../css/ImageBio.css';
 /** 
     Displays an image. On hover text appears on image and the image becomes opaque.
 */
-class ImageBio extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-       <div className="jumbotron">
-          <Image id="jumbotron-image" src={meImage} alt="Picture of me" fluid/>
-          <p>{this.props.text}</p>
-       </div> 
-    );
-  }
+function ImageBio(props) {
+  return (
+     <div className="jumbotron">
+        <Image id="jumbotron-image" src={meImage} alt="Picture of me" fluid/>
+        <p>{props.text}</p>
+     </div> 
+  );
 }
 
 export default ImageBio;

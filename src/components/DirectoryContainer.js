@@ -10,26 +10,16 @@ import './../css/DirectoryContainer.css';
   Directory container contains all the clickable directories
   displayed in rows.
 */
-class DirectoryContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      directory: '',
-      directories: [...this.props.directories]
-    }
-  }
+function DirectoryContainer(props) {
+  const topLevelDirectories = props.directories[0].images;
+  const directories = topLevelDirectories.map((dir, index) => 
+    <Directory key={dir.name} name={dir.name} image={dir.image}/>);
 
-  render() {
-    const topLevelDirectories = this.state.directories[0].images;
-    const directories = topLevelDirectories.map((dir, index) => 
-      <Directory key={dir.name} name={dir.name} directory={this.state.directory} image={dir.image}/>);
-    
-    return (
-      <Row id="home-directory" className="DirectoryContainer row">
-        {directories}
-      </Row>
-    );
-  }
+  return (
+    <Row id="home-directory" className="DirectoryContainer row">
+      {directories}
+    </Row>
+  );
 }
 
 export default DirectoryContainer;
