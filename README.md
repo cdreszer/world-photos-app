@@ -4,6 +4,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `./setImagesAndStart.sh`
+
+Runs a python script that creates a JS object from the "images" directory.<br>
+Then runs the app using npm start.
+
+In top images directory, name each image that is to act as a cover photo the directory name.
+Cover of a directory named "Portugal" should be named "Portugal.JPG".
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
