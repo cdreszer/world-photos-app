@@ -6,7 +6,7 @@ import './../css/ImageGalleryCarousel.css';
 
 
 
-class ImageGalleryCarousel extends React.Component {
+class ImageGalleryCarousel extends Component {
   constructor(props, context) {
     super(props, context);
 

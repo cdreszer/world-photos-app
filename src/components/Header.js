@@ -73,7 +73,7 @@ class Header extends Component {
               <NavDropdown title="Locations" id="collasible-nav-dropdown">
                 {locations}
               </NavDropdown>
-              <Nav.Link href="#videos">Videos</Nav.Link>
+              <Nav.Link href="#videos">Parallax</Nav.Link>
               <Nav.Link href="#animals">Animals</Nav.Link>
               <Nav.Link href="#map">Map</Nav.Link>
               <Nav.Link href="#contact-info">Contact</Nav.Link>

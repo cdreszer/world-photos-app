@@ -23,6 +23,8 @@ import './../css/MainContent.css';
 
       ^ use match.params.locName to find which images to use
 
+      maybe use REACT-REDUX-FORM for some sort of user comments on locations
+
     IDEAS: 
       - travel map that is clickable that reroutes to page (maybe add editable lon,lat on image gallery page)
       - image title, desc, file name, country, region, etc. in JSON objects (maybe mongoDB)
@@ -37,10 +39,8 @@ class MainContent extends Component {
     this.state = {
       display: "HOME_PAGE",
       imagePath: "",
-      directories: this.props.directories,
     };
 
-    // this.updateContent = this.updateContent.bind(this);
     this.renderContent = this.renderContent.bind(this);
   }
 
@@ -72,9 +72,9 @@ class MainContent extends Component {
   renderContent() {
     switch (this.state.display) {
       case 'IMAGE_CAROUSEL':
-        return <ImageGalleryCarousel title={this.state.imagePath} images={this.getImagesFromPath(this.state.directories, this.state.imagePath)}/>;
+        return <ImageGalleryCarousel title={this.state.imagePath} images={this.getImagesFromPath(this.props.directories, this.state.imagePath)}/>;
       default:
-         return <HomePage directories={this.state.directories}/>;
+         return <HomePage directories={this.props.directories}/>;
     }
   }
 

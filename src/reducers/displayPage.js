@@ -1,5 +1,3 @@
-import { directories as DIRECTORIES } from './../components/images.js'
-
 export const initialState = {
    display: "HOME_PAGE", 
    imagePath: "",

@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
 
 import MainContent from "./components/MainContent.js"
 import Header from "./components/Header.js"
 import Footer from "./components/Footer.js"
-
-import { displayPage } from './actions'
-import { directories as jsonDirectories } from './components/images.js'
 
 import './css/App.css';
 
