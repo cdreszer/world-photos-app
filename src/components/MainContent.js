@@ -101,23 +101,3 @@ const mapDispatchToProps = (dispatch) => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainContent);
 // USE withRouter(connect...)
-
-  /**
-    Passes to child, and then sets state.
-    Should be a better way to do this...
-    CURRENTLY UNUSED
-  */
-  // updateContent(type, content) {
-  //   switch (type) {
-  //     case 'DISPLAY_PAGE':
-  //       // Updates props
-  //       this.props.displayPageDispatch(content);
-
-  //       // SET STATE
-  //       //this.setState({display: content.display, imagePath: content.imagePath});
-  //       // this.setState({display: this.props.display, imagePath: this.props.imagePath});
-  //       break;
-  //     default:
-  //       return ;
-  //  }
-  // }

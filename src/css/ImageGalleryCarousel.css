@@ -49,6 +49,7 @@
 @media (min-width: 1200px) {
    .imageGallery {
       max-width: 950px;
+      height: 712.5px;
    }
 }
 
@@ -56,6 +57,7 @@
 @media (min-width: 992px) and (max-width: 1199px) {
    .imageGallery {
       /*max-width: 800px;*/
+      height: 697.5px;
    }
 }
 
@@ -63,12 +65,16 @@
 @media (min-width: 768px) and (max-width: 991px) {
    .imageGallery {
       /*max-width: 1000px;*/
+      height: 712.5px;
    }
 }
 
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
-
+   .imageGallery {
+      /*max-width: 1000px;*/
+      height: 382.5px;
+   }
 }
 
 

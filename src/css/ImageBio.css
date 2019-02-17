@@ -31,13 +31,19 @@
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
+  .container .jumbotron {
+    height: 755px;  
+  }
   .container .jumbotron p {
       font-size: 50px;
-  } 
+  }
 }
 
 /********** Medium devices only **********/
 @media (min-width: 992px) and (max-width: 1199px) {
+  .container .jumbotron {
+    height: 635px;  
+  }
   .container .jumbotron p {
     font-size: 40px;
   } 
@@ -45,6 +51,9 @@
 
 /********** Small devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {
+  .container .jumbotron {
+    height: 475px;  
+  }
 .container .jumbotron p {
     font-size: 40px;
   } 
@@ -52,6 +61,9 @@
 
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
+  .container .jumbotron {
+    height: 355px;  
+  }
   .container .jumbotron p {
     font-size: 25px;
   } 
