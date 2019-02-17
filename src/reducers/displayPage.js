@@ -1,3 +1,5 @@
+import {DISPLAY_PAGE} from './../actions/index.js';
+
 export const initialState = {
    display: "HOME_PAGE", 
    imagePath: "",
@@ -5,7 +7,7 @@ export const initialState = {
 
 const displayPage = (state= initialState, action) => {
    switch (action.type) {
-      case 'DISPLAY_PAGE':
+      case DISPLAY_PAGE:
          return {
             display: action.content.display,
             imagePath: action.content.imagePath,

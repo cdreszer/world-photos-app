@@ -1,4 +1,5 @@
 import { directories as DIRECTORIES } from './../components/images.js'
+import {DIRECTORY} from './../actions/index.js'
 
 export const initialState = DIRECTORIES;
 

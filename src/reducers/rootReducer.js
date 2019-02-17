@@ -1,15 +1,12 @@
 import { combineReducers } from 'redux'
-import displayPage from './displayPage.js'
-import directories from './directoryReducer.js'
+import displayPage, {initialState as displayPageInitialState} from './displayPage.js'
+import directories, {initialState as directoriesInitialState} from './directoryReducer.js'
 import { directories as DIRECTORIES } from './../components/images.js'
 
 //complete state should look more like:
 export const initialState = {
-   displayPage: {
-      display: "HOME_PAGE", 
-      imagePath: ""
-   },
-   directories: DIRECTORIES
+   displayPage: displayPageInitialState,
+   directories: directoriesInitialState
 };
 
 
