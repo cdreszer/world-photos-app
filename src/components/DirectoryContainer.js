@@ -13,7 +13,9 @@ import './../css/DirectoryContainer.css';
 function DirectoryContainer(props) {
   const topLevelDirectories = props.directories[0].images;
   const directories = topLevelDirectories.map((dir, index) => 
-    <Directory key={dir.name} name={dir.name} image={dir.image}/>);
+    <div className="col-md-4 col-sm-6 col-xs-12">
+      <Directory key={dir.name} name={dir.name} image={dir.image}/>
+    </div>);
 
   return (
     <Row id="home-directory" className="DirectoryContainer row">
