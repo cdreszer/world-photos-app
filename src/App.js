@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { BrowserRouter } from 'react-router-dom'
 import MainContent from "./components/MainContent.js"
 import Header from "./components/Header.js"
 import Footer from "./components/Footer.js"
@@ -11,15 +11,16 @@ class App extends Component {
       super(props);
   }
 
-  // <BrowserRouter></BrowserRouter>
-   render() {
-    return (
+  render() {
+  return (
+    <BrowserRouter>
       <div>
         <Header />
         <MainContent />
         <Footer />
       </div>
-    );
+    </BrowserRouter>
+  );
   }
 }
 

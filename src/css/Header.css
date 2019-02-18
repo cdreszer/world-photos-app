@@ -12,18 +12,20 @@
   padding-top: 15px;
 }
 
-/*.
-LEFTOVER FROM ORIGINAL HEADER
-navbar-brand h1 {
-  color: var(--text-color);
-  font-size: 1.5em;
-  font-weight: bold;
-  text-shadow: 1px 1px 1px #222;
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: .75;
-}*/
+.navbar-brand a {
+  color: #fff;
+  text-decoration: none;
+}
 
+/* Location dropdown menu */
+.dropdown-item a {
+  color: #000;
+  text-decoration: none;
+  width: 100%;
+}
+.dropdown-item.active, .dropdown-item:active {
+  background-color: var(--primary);
+}
 .navbar-brand a:hover, .navbar-brand a:focus {
   text-decoration: none;
 }

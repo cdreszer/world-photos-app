@@ -3,8 +3,10 @@ import { connect } from 'react-redux'
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link, NavLink, withRouter } from 'react-router-dom';
+import { LinkContainer} from 'react-router-bootstrap';
 
-import {displayPage} from '../actions'
+// import {displayPage} from '../actions'
 
 import './../css/index.css';
 import './../css/Header.css';
@@ -22,8 +24,6 @@ class Header extends Component {
 
     this.handleToggler = this.handleToggler.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
-    this.returnToHomePage = this.returnToHomePage.bind(this);
-    this.goToCountry = this.goToCountry.bind(this);
   }
 
   handleToggler() {
@@ -36,34 +36,20 @@ class Header extends Component {
     }
   }
 
-  // returns back to the home page
-  returnToHomePage(e) {
-    e.preventDefault();
-    console.log("Navbar brand clicked --> return home")
-    this.props.dispatch(displayPage({display: "HOME_PAGE", imagePath: ""}));
-  }
-
-  // goes to specified countries image page
-  goToCountry(e) {
-    e.preventDefault();
-
-    if (this.state.isOpen) {
-      this.handleToggler();
-    }
-    console.log("Navbar country clicked --> go to " + e.currentTarget.id)
-    this.props.dispatch(displayPage({display: "IMAGE_CAROUSEL", imagePath: e.currentTarget.id}));
-  }
-
-
   render() {
     let locationList = this.props.directories[0]["sub-directories"].sort();
     const locations = locationList.map((loc) => 
-      <NavDropdown.Item id={loc} onClick={this.goToCountry}>{loc}</NavDropdown.Item>);
+      <LinkContainer to={`/location/${loc}`}>
+        <NavDropdown.Item key={loc} id={loc}>{loc}</NavDropdown.Item>
+      </LinkContainer>);
+
     // add to Navbar: onBlur={this.handleBlur} .... however if click dropdown closes menu :(
     return (
       <header>
         <Navbar expanded={this.state.isOpen} expand="md" variant="dark">
-          <Navbar.Brand onClick={this.returnToHomePage}>Chase Dreszer's Travel Photos</Navbar.Brand>
+          <Navbar.Brand>
+            <Link to='/home'>Chase Dreszer's Travel Photos</Link>
+          </Navbar.Brand>
           <Navbar.Toggle onClick={this.handleToggler} aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
@@ -73,7 +59,7 @@ class Header extends Component {
               <NavDropdown title="Locations" id="collasible-nav-dropdown">
                 {locations}
               </NavDropdown>
-              <Nav.Link href="#videos">Parallax</Nav.Link>
+              <NavLink className="nav-link" to='/parallax'>Parallax</NavLink>
               <Nav.Link href="#animals">Animals</Nav.Link>
               <Nav.Link href="#map">Map</Nav.Link>
               <Nav.Link href="#contact-info">Contact</Nav.Link>
@@ -92,4 +78,28 @@ const mapStateToProps = (state) => {
   return {directories: state.directories}
 };
 
-export default connect(mapStateToProps)(Header);
+export default withRouter(connect(mapStateToProps)(Header));
+
+// Purely redux routing.
+
+//     this.returnToHomePage = this.returnToHomePage.bind(this);
+//     this.goToCountry = this.goToCountry.bind(this);
+
+//   // returns back to the home page
+//   returnToHomePage(e) {
+//     e.preventDefault();
+//     console.log("Navbar brand clicked --> return home")
+//     this.props.dispatch(displayPage({display: "HOME_PAGE", imagePath: ""}));
+//   }
+
+//   // goes to specified countries image page
+//   // onClick={this.goToCountry}
+//   goToCountry(e) {
+//     e.preventDefault();
+
+//     if (this.state.isOpen) {
+//       this.handleToggler();
+//     }
+//     console.log("Navbar country clicked --> go to " + e.currentTarget.id)
+//     this.props.dispatch(displayPage({display: "IMAGE_CAROUSEL", imagePath: e.currentTarget.id}));
+//   }

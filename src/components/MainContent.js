@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Container from 'react-bootstrap/Container';
 
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+
 import HomePage from "./HomePage.js"
 import ImageGalleryCarousel from "./ImageGalleryCarousel.js";
 import ParallaxPage from "./ParallaxPage.js";
@@ -15,11 +17,6 @@ import './../css/MainContent.css';
     Main content displayed to the user between header and footer.
 
     LOOK INTO REACT-ROUTER-DOM : probably what I should be using to redirect content.
-      <Switch>
-        <Route path="/home" component={() => <HomePage directories={this.state.directories}/>}>
-        <Route path="/location/:locName" component={({match}) => <ImageGalleryCarousel title={this.state.imagePath} images={this.getImagesFromPath(this.state.directories, this.state.imagePath)}/>}>
-        <Redirect to="/home">
-      </Switch>
 
       ^ use match.params.locName to find which images to use
 
@@ -36,22 +33,18 @@ class MainContent extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      display: "HOME_PAGE",
-      imagePath: "",
-    };
-
-    this.renderContent = this.renderContent.bind(this);
+    this.homePage = this.homePage.bind(this);
+    this.imageGalleryPage = this.imageGalleryPage.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.display !== this.props.display) {
-      this.setState({display: nextProps.display, imagePath: nextProps.imagePath});
-    }
-    else if (nextProps.imagePath !== this.props.imagePath) {
-      this.setState({imagePath: nextProps.imagePath});
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.display !== this.props.display) {
+  //     this.setState({display: nextProps.display, imagePath: nextProps.imagePath});
+  //   }
+  //   else if (nextProps.imagePath !== this.props.imagePath) {
+  //     this.setState({imagePath: nextProps.imagePath});
+  //   }
+  // }
 
   componentDidUpdate() {
     // On main content update moves scroll to top of the page.
@@ -66,23 +59,34 @@ class MainContent extends Component {
     const path = './../images/' + imgPath;
     var directory = directories.find((dir) => dir.directory === path);
 
-    return directory.images;
+    return directory ? directory.images : [];
   }
 
-  renderContent() {
-    switch (this.state.display) {
-      case 'IMAGE_CAROUSEL':
-        return <ImageGalleryCarousel title={this.state.imagePath} images={this.getImagesFromPath(this.props.directories, this.state.imagePath)}/>;
-      default:
-         return <HomePage directories={this.props.directories}/>;
-    }
-  }
-
-  render() {
+  homePage() {
     return (
       <Container id="main-content" >
-         {this.renderContent()}
+        <HomePage directories={this.props.directories}/>
       </Container>
+    );
+  };
+
+  imageGalleryPage({match}) {
+    return (
+      <Container id="main-content" >
+        <ImageGalleryCarousel title={match.params.locName} images={this.getImagesFromPath(this.props.directories, match.params.locName)}/>
+      </Container>
+    );
+  }
+
+  // {this.renderContent()}
+  render() {
+    return (
+      <Switch>
+        <Route path="/home" component={this.homePage} />
+        <Route path="/location/:locName" component={this.imageGalleryPage} />
+        <Route path='/parallax' component={() => <ParallaxPage />} />
+        <Redirect to="/home" />
+      </Switch>
     );
   }
 }
@@ -99,5 +103,19 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainContent);
-// USE withRouter(connect...)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MainContent));
+
+
+
+// Old method of routing via redux dispatches
+
+  // this.renderContent = this.renderContent.bind(this);
+
+  // renderContent() {
+  //   switch (this.state.display) {
+  //     case 'IMAGE_CAROUSEL':
+  //       return <ImageGalleryCarousel title={this.state.imagePath} images={this.getImagesFromPath(this.props.directories, this.state.imagePath)}/>;
+  //     default:
+  //        return <HomePage directories={this.props.directories}/>;
+  //   }
+  // }
