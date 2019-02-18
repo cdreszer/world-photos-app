@@ -1,0 +1,14 @@
+.marker-container {
+   /* centers marker on lat long */
+   left: -37.5px;
+   top: -35px;
+   width: 75px;
+   height: 70px;
+   /* Google map overriding font family */
+   font-family: 'Carrois Gothic SC', sans-serif;
+}
+
+.Image {
+   width: 100%;
+   height: 100%;
+}

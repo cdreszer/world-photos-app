@@ -47,15 +47,17 @@ class Header extends Component {
     return (
       <header>
         <Navbar expanded={this.state.isOpen} expand="md" variant="dark">
-          <Navbar.Brand>
-            <Link to='/home'>Chase Dreszer's Travel Photos</Link>
-          </Navbar.Brand>
+          <LinkContainer to='/home'>
+            <Navbar.Brand>Chase Dreszer's Travel Photos</Navbar.Brand>
+          </LinkContainer>
           <Navbar.Toggle onClick={this.handleToggler} aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
             </Nav>
             <Nav>
-              <Nav.Link href="#main-content">About</Nav.Link>
+              <LinkContainer to='/about'>
+                <Nav.Link >About</Nav.Link>
+              </LinkContainer>
               <NavDropdown title="Locations" id="collasible-nav-dropdown">
                 {locations}
               </NavDropdown>
@@ -63,7 +65,9 @@ class Header extends Component {
                 <Nav.Link>Parallax</Nav.Link>
               </LinkContainer>
               <Nav.Link href="#animals">Animals</Nav.Link>
-              <Nav.Link href="#map">Map</Nav.Link>
+              <LinkContainer to='/map'>
+                <Nav.Link>Map</Nav.Link>
+              </LinkContainer>
               <Nav.Link href="#contact-info">Contact</Nav.Link>
               <Nav.Link id="phone" href="tel:858-395-6663" className="d-xs-none d-sm-block ">
                 <span>858-395-6663</span>

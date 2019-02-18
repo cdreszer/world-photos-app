@@ -30,7 +30,7 @@ function Footer(props) {
           </section>
           <section id="testimonials" className="col-md-4">
             <p>Pictures from x amount of countries that I have travelled to over the past two years.</p>
-            <p>Site made to display skills in <span>HTML, CSS, Javascript, React, Redux</span></p>
+            <p>Site made to display skills in <span>HTML5, CSS3, Bootstrap, Javascript, React, Redux</span></p>
           </section>
         </div>
         <div className="text-center">&copy; Copyright Chase Dreszer 2019</div>
