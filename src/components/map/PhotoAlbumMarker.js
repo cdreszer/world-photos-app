@@ -6,7 +6,12 @@ import { Link, withRouter } from 'react-router-dom';
 import './../../css/index.css'
 import './../../css/map/PhotoAlbumMarker.css'
 
-function PhotoAlbumMarker(props) {
+/* 
+   Essentially copy of Directory.... could probably refactor to remove this function and instead use directory.
+
+   Could add an array of travel paths to and from location.
+*/
+function PhotoAlbumMarker(props) { 
   const imageURI = require('./../../images/' + props.image);
   return (
     <Link to={`/location/${props.name}`} > 
