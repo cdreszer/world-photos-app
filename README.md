@@ -1,3 +1,12 @@
+App to show off photos from my travels and skills using HTML, CSS, Bootstrap, Javascript, React, Redux.
+
+OF NOTE: project is in progress and not completed nor currently connected to db.
+
+Locally I am using the project with 100+ pictures that I am not uploading due to size.
+
+screenshots on 2/19/19:
+![Alt text](/app-screenshots.png?raw=true "Various screenshots")
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
