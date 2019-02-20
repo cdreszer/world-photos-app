@@ -10,6 +10,8 @@ import './../../css/map/PhotoAlbumMarker.css'
    Essentially copy of Directory.... could probably refactor to remove this function and instead use directory.
 
    Could add an array of travel paths to and from location.
+   use onmouseover to set each element in props.paths to visible... setVisible(true)
+      .... onmouseover={e => props.paths.forEach(path => path.setVisible(true))}
 */
 function PhotoAlbumMarker(props) { 
   const imageURI = require('./../../images/' + props.image);

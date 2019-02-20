@@ -14,6 +14,8 @@ class TravelMap extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {};
+
     this.renderTravelPaths = this.renderTravelPaths.bind(this);
   }
 
@@ -27,7 +29,8 @@ class TravelMap extends Component {
     styles: travelMapStyle
   };
 
-  // Renders all travel paths on load.... want to figure out a way to render only on hover
+  // Renders all travel paths on load.... 
+  // Currently saving paths... only needed if enable hovering
   renderTravelPaths(map, maps) {
     // individual dash in dashed line
     map.style = travelMapStyle;
@@ -38,6 +41,9 @@ class TravelMap extends Component {
     };
 
     this.props.latlongs.forEach(loc => {
+      this.setState({
+        [loc.name]: []
+      });
       if (loc.path) {
         loc.path.forEach(path => {
           var flightPath = new maps.Polyline({
@@ -53,6 +59,10 @@ class TravelMap extends Component {
           });
 
           flightPath.setMap(map);
+          // flightPath.setVisible(false); ... use onmouseover in marker to setVisible(true)
+          this.setState({
+            [loc.name]: this.state[loc.name].concat(flightPath)
+          });
         });
       }
     });
@@ -64,8 +74,7 @@ class TravelMap extends Component {
             lng={album.lng}
             name={album.name} 
             image={album.imagePath}
-            // paths={this.state[album.name]}
-            // map={this.state.map}
+            paths={this.state[album.name]}
           />);
 
     return (

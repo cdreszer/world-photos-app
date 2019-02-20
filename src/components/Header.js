@@ -64,7 +64,7 @@ class Header extends Component {
               <LinkContainer to='/parallax'>
                 <Nav.Link>Parallax</Nav.Link>
               </LinkContainer>
-              <Nav.Link href="#animals">Animals</Nav.Link>
+              <Nav.Link href="#">Postcards</Nav.Link>
               <LinkContainer to='/map'>
                 <Nav.Link>Map</Nav.Link>
               </LinkContainer>
