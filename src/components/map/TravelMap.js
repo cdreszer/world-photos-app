@@ -44,6 +44,7 @@ class TravelMap extends Component {
       this.setState({
         [loc.name]: []
       });
+      
       if (loc.path) {
         loc.path.forEach(path => {
           var flightPath = new maps.Polyline({

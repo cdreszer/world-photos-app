@@ -3,26 +3,24 @@ import Image from 'react-bootstrap/Image';
 import { connect } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom';
 
+import Directory from './../Directory.js'
+
 import './../../css/index.css'
 import './../../css/map/PhotoAlbumMarker.css'
 
 /* 
-   Essentially copy of Directory.... could probably refactor to remove this function and instead use directory.
+   Directory with additional styling in order to be placed on travel map.
 
-   Could add an array of travel paths to and from location.
+   Could add an array of travel paths to and from location. (currently all paths are always showing)
    use onmouseover to set each element in props.paths to visible... setVisible(true)
       .... onmouseover={e => props.paths.forEach(path => path.setVisible(true))}
 */
 function PhotoAlbumMarker(props) { 
-  const imageURI = require('./../../images/' + props.image);
   return (
-    <Link to={`/location/${props.name}`} > 
-      <div className="directory-tile marker-container" id={props.name + "-marker"}>
-        <Image className="Image" src={imageURI} alt={props.name} fluid/>
-        <span>{props.name}</span>
-      </div>
-    </Link>
+    <div className="marker-container">
+      <Directory  name={props.name} image={props.image}/>
+    </div>
   );
 }
  
-export default withRouter(connect()(PhotoAlbumMarker));
+export default PhotoAlbumMarker;

@@ -1,5 +1,6 @@
 .marker-container {
    /* centers marker on lat long */
+   position: relative;
    left: -37.5px;
    top: -35px;
    width: 75px;
