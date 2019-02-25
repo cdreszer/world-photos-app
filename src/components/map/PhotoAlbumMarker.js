@@ -1,7 +1,4 @@
 import React from 'react';
-import Image from 'react-bootstrap/Image';
-import { connect } from 'react-redux'
-import { Link, withRouter } from 'react-router-dom';
 
 import Directory from './../Directory.js'
 

@@ -4,8 +4,6 @@ import Image from 'react-bootstrap/Image';
 
 import { Link, withRouter } from 'react-router-dom';
 
-import { displayPage } from '../actions'
-
 import './../css/index.css';
 import './../css/Directory.css';
 
@@ -14,7 +12,7 @@ import './../css/Directory.css';
   Inside of directory can be content and subdirectories.
   
   For this project a directory is an image gallery for an individual
-  country, which might have subdirectories for regions within the country.
+  country/location, which might have subdirectories for regions within the country.
   ex. Greece as the directory, Athens and Santorini as subdirectories with
   image galleries within each region.
 

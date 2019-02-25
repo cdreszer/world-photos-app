@@ -3,10 +3,8 @@ import { connect } from 'react-redux'
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link, NavLink, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { LinkContainer} from 'react-router-bootstrap';
-
-// import {displayPage} from '../actions'
 
 import './../css/index.css';
 import './../css/Header.css';
@@ -37,7 +35,8 @@ class Header extends Component {
   }
 
   render() {
-    let locationList = this.props.directories[0]["sub-directories"].sort();
+    let locationList = this.props.directories && this.props.directories.length > 0 
+      ? this.props.directories[0]["sub-directories"].sort() : [];
     const locations = locationList.map((loc) => 
       <LinkContainer to={`/location/${loc}`}>
         <NavDropdown.Item key={loc} id={loc}>{loc}</NavDropdown.Item>
@@ -85,27 +84,3 @@ const mapStateToProps = (state) => {
 };
 
 export default withRouter(connect(mapStateToProps)(Header));
-
-// Purely redux routing.
-
-//     this.returnToHomePage = this.returnToHomePage.bind(this);
-//     this.goToCountry = this.goToCountry.bind(this);
-
-//   // returns back to the home page
-//   returnToHomePage(e) {
-//     e.preventDefault();
-//     console.log("Navbar brand clicked --> return home")
-//     this.props.dispatch(displayPage({display: "HOME_PAGE", imagePath: ""}));
-//   }
-
-//   // goes to specified countries image page
-//   // onClick={this.goToCountry}
-//   goToCountry(e) {
-//     e.preventDefault();
-
-//     if (this.state.isOpen) {
-//       this.handleToggler();
-//     }
-//     console.log("Navbar country clicked --> go to " + e.currentTarget.id)
-//     this.props.dispatch(displayPage({display: "IMAGE_CAROUSEL", imagePath: e.currentTarget.id}));
-//   }
