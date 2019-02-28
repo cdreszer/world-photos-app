@@ -3,7 +3,7 @@
   padding: 0px;
   border: 2px solid var(--text-color);
   overflow: hidden;
-  margin: 0px auto 15px;
+  margin: 0px auto 30px;
 }
 
 .directory-tile:hover {

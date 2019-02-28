@@ -36,11 +36,12 @@
 }
 
 /* Sets caption and next/previous arrows to hidden unless hovered */
-.carousel-caption, .carousel-control-next, .carousel-control-prev, .carousel-indicators {
+.carousel-caption, .carousel-control-next, .carousel-control-prev, .carousel-indicators, #country-title  {
   visibility: hidden;
 }
 .imageGallery:hover .carousel-caption, .imageGallery:hover .carousel-control-next, 
-.imageGallery:hover .carousel-control-prev, .imageGallery:hover .carousel-indicators  {
+.imageGallery:hover .carousel-control-prev, .imageGallery:hover .carousel-indicators, 
+.imageGallery:hover + #country-title, #country-title:hover {
    visibility: visible;
 }
 
