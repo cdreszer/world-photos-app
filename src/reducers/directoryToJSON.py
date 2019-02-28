@@ -3,7 +3,7 @@ import os, sys
 
 # Redirects sys.stdout to images.JSON
 orig_stdout = sys.stdout
-f = open('images.js', 'w')
+f = open('directories.js', 'w')
 sys.stdout = f
 
 SKIP_FILES = ['.DS_Store', 'README.md', 'BIO.jpg']
