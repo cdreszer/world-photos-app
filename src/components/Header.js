@@ -22,6 +22,7 @@ class Header extends Component {
 
     this.handleToggler = this.handleToggler.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
+    this.scrollToContactInfo = this.scrollToContactInfo.bind(this);
   }
 
   handleToggler() {
@@ -32,6 +33,11 @@ class Header extends Component {
     if (this.state.isOpen) {
       this.handleToggler();
     }
+  }
+
+  scrollToContactInfo(e) {
+    if (document.getElementById('contact-info'))
+      document.getElementById('contact-info').scrollIntoView({behavior: "smooth"}) ;
   }
 
   render() {
@@ -67,7 +73,7 @@ class Header extends Component {
               <LinkContainer to='/map'>
                 <Nav.Link>Map</Nav.Link>
               </LinkContainer>
-              <Nav.Link href="#contact-info">Contact</Nav.Link>
+              <Nav.Link onClick={this.scrollToContactInfo}>Contact</Nav.Link>
               <Nav.Link id="phone" href="tel:858-395-6663" className="d-xs-none d-sm-block ">
                 <span>858-395-6663</span>
               </Nav.Link>
