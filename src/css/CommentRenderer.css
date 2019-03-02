@@ -1,0 +1,11 @@
+.commentContainer {
+   color: black;
+}
+
+.commentName {
+   font-weight: bold;
+}
+
+.commentContainer li {
+   margin-bottom: 0px;
+}

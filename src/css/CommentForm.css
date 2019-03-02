@@ -1,0 +1,23 @@
+form {
+   margin: 15px;
+   /*color: black;*/
+}
+
+form span {
+   margin-top: 5px;
+   color: black;
+   margin-right: 10px;
+}
+
+form button {
+   margin-top: 5px;
+}
+
+#authorField {
+
+}
+
+#commentField {
+   width: 50vw;
+   height: 5vw;
+}
