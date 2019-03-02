@@ -29,11 +29,13 @@ function ParallaxPage(props) {
   const topImageStyle = getBackgroundStyle(props.topImage);
   const middleImageStyle = getBackgroundStyle(props.middleImage);
   const bottomImageStyle = getBackgroundStyle(props.bottomImage);
+
   const desc1 = props.desc1 ? props.desc1 : 
     (<p> Make no mistake: Supertubes is one of the best waves in Europe.<br/> 
       There’s one main peak with a super-fast (though makable) left, and a somewhat shorter right, 
       and one other peak down the beach that’s not quite as perfect but still way better than your 
       average day at Huntington Pier. </p>);
+    
   const desc2 = props.desc2 ? props.desc2 : 
     (<p> The best known surf spot in north Portugal breaks off a jetty and runs 
       through to the inside as a fast, walled up right that finally dies as a close out over 
