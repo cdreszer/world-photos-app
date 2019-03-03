@@ -11,6 +11,7 @@ import ImageBio from "./ImageBio.js";
 import TravelMap from "./map/TravelMap.js";
 import ReduxCommentForm from './CommentForm.js'
 import CommentRenderer from './CommentRenderer.js'
+import PostcardPage from './PostcardPage.js'
 
 import { displayPage } from "./../actions";
 
@@ -19,6 +20,9 @@ import './../css/MainContent.css';
 
 /** 
     Main content displayed to the user between header and footer.
+
+    comments / latlongs / travel paths / (maybe direstory json) should be saved in DB,
+    images wont be since they take up a lot of space.
 
     IDEAS: 
       - travel map that is clickable that reroutes to page (maybe add editable lon,lat on image gallery page)
@@ -40,6 +44,7 @@ class MainContent extends Component {
     this.homePage = this.homePage.bind(this);
     this.imageGalleryPage = this.imageGalleryPage.bind(this);
     this.aboutPage = this.aboutPage.bind(this);
+    this.postcardPage = this.postcardPage.bind(this);
   }
 
   componentDidUpdate() {
@@ -84,6 +89,14 @@ class MainContent extends Component {
     );
   }
 
+  postcardPage() {
+    return (
+      <Container id="main-content" >
+        <PostcardPage />
+      </Container>
+    );
+  }
+
   render() {
     return (
       <Switch>
@@ -91,6 +104,7 @@ class MainContent extends Component {
         <Route path="/about" component={this.aboutPage}/>
         <Route path="/location/:locName" component={this.imageGalleryPage} />
         <Route path="/parallax" component={() => <ParallaxPage />} />
+        <Route path="/postcards" component={this.postcardPage} />
         <Route path="/map" component={() => <TravelMap />} />
         <Redirect to="/home" />
       </Switch>

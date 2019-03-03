@@ -5,6 +5,16 @@
   --highlight-orange: #EF803B;
 }
 
+@font-face {
+  font-family: 'Zing Rust Shadow';
+  src: url("./fonts/ZingRust/ZingRustDemo-Sh1.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'Zing Rust Base';
+  src: url("./fonts/ZingRust/ZingRustDemo-Base.otf") format("opentype");
+}
+
 body {
   font-size: 16px;
   color: var(--text-color);
