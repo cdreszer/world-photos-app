@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 
 import { travelMapStyle } from './TravelMapCustomStyle.js';
 import PhotoAlbumMarker from './PhotoAlbumMarker.js';
-import Directory from './../Directory.js';
  
 import './../../css/index.css'
 import './../../css/map/TravelMap.css'

@@ -13,8 +13,6 @@ import ReduxCommentForm from './CommentForm.js'
 import CommentRenderer from './CommentRenderer.js'
 import PostcardPage from './PostcardPage.js'
 
-import { displayPage } from "./../actions";
-
 import './../css/index.css';
 import './../css/MainContent.css';
 
@@ -113,38 +111,7 @@ class MainContent extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {display: state.displayPage.display, imagePath: state.displayPage.imagePath, directories: state.directories}
+  return { directories: state.directories }
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    displayPageDispatch: (message) => {
-      dispatch(displayPage(message))
-    }
-  }
-};
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MainContent));
-
-// Old METHOD OF ROUTING USING PURELY REDUX DISPATCHES
-
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.display !== this.props.display) {
-  //     this.setState({display: nextProps.display, imagePath: nextProps.imagePath});
-  //   }
-  //   else if (nextProps.imagePath !== this.props.imagePath) {
-  //     this.setState({imagePath: nextProps.imagePath});
-  //   }
-  // }
-
-
-  // this.renderContent = this.renderContent.bind(this);
-
-  // renderContent() {
-  //   switch (this.state.display) {
-  //     case 'IMAGE_CAROUSEL':
-  //       return <ImageGalleryCarousel title={this.state.imagePath} images={this.getImagesFromPath(this.props.directories, this.state.imagePath)}/>;
-  //     default:
-  //        return <HomePage directories={this.props.directories}/>;
-  //   }
-  // }
+export default withRouter(connect(mapStateToProps)(MainContent));
