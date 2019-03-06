@@ -4,16 +4,16 @@ import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row'
 
-import './../css/Postcard.css'
+import './../../css/Postcard.css'
 
 function FrontPostCard(props) {
-   const imageURI = require('./../images/' + props.image);
+   const imageURI = require('./../../images/' + props.comment.image.image);
 
    return (
       <div className="image-side card-face">
-         <Image className="Image" src={imageURI} alt={props.image} fluid/>
-         <p className="postcard-greeting">Greetings from <br/><span className="greeting-location">{props.comment.imagePath}</span></p><br/>
-         <p className="postcard-greeting greeting-shadow">Greetings from <br/><span className="greeting-location greeting-shadow">{props.comment.imagePath}</span></p><br/>
+         <Image className="Image" src={imageURI} alt={props.comment.image.name} fluid/>
+         <p className="postcard-greeting">Greetings from <br/><span className="greeting-location">{props.comment.image.name}</span></p><br/>
+         <p className="postcard-greeting greeting-shadow">Greetings from <br/><span className="greeting-location greeting-shadow">{props.comment.image.name}</span></p><br/>
       </div>
    );
 }
@@ -31,7 +31,7 @@ function BackPostCard(props) {
                </div>
                <div className="right-side col-xs-6">
                   <span className="commentName"> - {props.comment.author}</span><br/>
-                  <span className="commentLocation">Sent from {props.comment.imagePath}</span><br/>
+                  <span className="commentLocation">Sent from {props.comment.image.name}</span><br/>
                </div>
             </Row>
          </Container>
@@ -63,7 +63,7 @@ class Postcard extends Component {
          <React.Fragment>
             <div className="postcard">
                <ReactCardFlip isFlipped={this.state.isFlipped}>
-                  <FrontPostCard key="front" image={this.props.image} comment={this.props.comment}/>
+                  <FrontPostCard key="front" comment={this.props.comment}/>
                   <BackPostCard key="back" comment={this.props.comment} />
                </ReactCardFlip>
                <button onClick={this.handleClick}><i class="fa fa-rotate-right"></i></button>

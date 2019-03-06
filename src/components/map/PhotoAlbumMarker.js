@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Directory from './../Directory.js'
+import Directory from './../shared/Directory.js'
 
 import './../../css/index.css'
 import './../../css/map/PhotoAlbumMarker.css'

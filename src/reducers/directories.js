@@ -1,6 +1,6 @@
 export const directories = [
 	{
-	"directory": "./../images/",
+	"directory": "",
 	"sub-directories": ['Barcelona', 'Paris', 'Bali', 'Hong Kong', 'Spain', 'Australia', 'Portugal', 'Komodo Island', 'Joshua Tree', 'Hawaii', 'New Zealand', 'Puerto Escondido', 'Copenhagen', 'Santorini', 'Athens'],
 	"files": "['Athens.JPG', 'Australia.jpg', 'Bali.JPG', 'Barcelona.JPG', 'Copenhagen.JPG', 'Hawaii.JPG', 'Hong Kong.JPG', 'Joshua Tree.JPG', 'Komodo Island.JPG', 'New Zealand.JPG', 'Paris.JPG', 'Portugal.JPG', 'Puerto Escondido.JPG', 'Santorini.JPG', 'Spain.JPG']",
 	"images": [
@@ -66,7 +66,7 @@ export const directories = [
 		},
 	]},
 	{
-	"directory": "./../images/Barcelona",
+	"directory": "Barcelona",
 	"sub-directories": [],
 	"files": "['P1010263.JPG', 'P1010348.JPG', 'P1010197.JPG', 'P1010195.JPG', 'P1010184.JPG', 'P1010225.JPG', 'P1010320.JPG', 'P1010240.JPG', 'P1010243.JPG', 'P1010293.JPG']",
 	"images": [
@@ -112,7 +112,7 @@ export const directories = [
 		},
 	]},
 	{
-	"directory": "./../images/Paris",
+	"directory": "Paris",
 	"sub-directories": [],
 	"files": "['P1000675.JPG', 'P1000676.JPG', 'P1000689.JPG', 'P1000670.JPG', 'P1000785.JPG', 'P1000695.JPG', 'P1000719.JPG']",
 	"images": [
@@ -146,7 +146,7 @@ export const directories = [
 		},
 	]},
 	{
-	"directory": "./../images/Bali",
+	"directory": "Bali",
 	"sub-directories": [],
 	"files": "['P1000259.JPG', 'P1010610.JPG', 'P1010575.JPG', 'P1010560.JPG', 'P1010585.JPG', 'P1000230.JPG', 'P1010581.JPG', 'P1000236.JPG', 'P1000255.JPG']",
 	"images": [
@@ -188,7 +188,7 @@ export const directories = [
 		},
 	]},
 	{
-	"directory": "./../images/Hong Kong",
+	"directory": "Hong Kong",
 	"sub-directories": [],
 	"files": "['P1010513.JPG', 'P1010514.JPG', 'P1010489.JPG', 'P1010516.JPG', 'P1010544.JPG', 'P1010490.JPG', 'P1010480.JPG']",
 	"images": [
@@ -222,7 +222,7 @@ export const directories = [
 		},
 	]},
 	{
-	"directory": "./../images/Spain",
+	"directory": "Spain",
 	"sub-directories": [],
 	"files": "['Around the Bend.JPG', 'Road From Portugal.JPG', 'San Sebastian.JPG', 'Mundaka.JPG', 'Entering Spain.JPG', 'Zarautz.JPG']",
 	"images": [
@@ -252,7 +252,7 @@ export const directories = [
 		},
 	]},
 	{
-	"directory": "./../images/Australia",
+	"directory": "Australia",
 	"sub-directories": [],
 	"files": "['IMG_4170.JPG', 'IMG_4214.JPG', 'IMG_4184.jpg', 'IMG_4156.JPG']",
 	"images": [
@@ -274,7 +274,7 @@ export const directories = [
 		},
 	]},
 	{
-	"directory": "./../images/Portugal",
+	"directory": "Portugal",
 	"sub-directories": [],
 	"files": "['P1000920.JPG', 'P1000946.JPG', 'P1000957.JPG', 'espinho.JPG', 'porto-boat.JPG', 'P1010094.JPG', 'P1010069.JPG', 'P1000938.JPG', 'P1010068.JPG', 'porto-flag.JPG', 'P1010078.JPG', 'peniche.JPG', 'P1010084.JPG']",
 	"images": [
@@ -332,7 +332,7 @@ export const directories = [
 		},
 	]},
 	{
-	"directory": "./../images/Komodo Island",
+	"directory": "Komodo Island",
 	"sub-directories": [],
 	"files": "['P1020003.JPG', 'P1020017.JPG', 'P1020016.JPG', 'P1020015.JPG', 'P1020011.JPG', 'P1020004.JPG', 'P1020006.JPG', 'P1010852.JPG', 'P1020007.JPG', 'P1020100.JPG', 'P1020106.JPG', 'IMG_5069.JPG', 'P1020105.JPG', 'P1020069.JPG', 'P1010790.JPG', 'P1010793.JPG', 'P1010745.JPG', 'P1010797.JPG', 'P1020050.JPG', 'P1010742.JPG', 'P1010719.JPG', 'P1020009.JPG', 'P1010727.JPG', 'P1020008.JPG']",
 	"images": [
@@ -434,7 +434,7 @@ export const directories = [
 		},
 	]},
 	{
-	"directory": "./../images/Joshua Tree",
+	"directory": "Joshua Tree",
 	"sub-directories": [],
 	"files": "['P1010449.JPG', 'Joshua Tree.JPG', 'P1010438.JPG', 'P1010411.JPG', 'P1010432.JPG', 'P1010423.JPG', 'P1010434.JPG', 'P1010446.JPG', 'P1010440.JPG', 'P1010442.JPG']",
 	"images": [
@@ -480,7 +480,7 @@ export const directories = [
 		},
 	]},
 	{
-	"directory": "./../images/Hawaii",
+	"directory": "Hawaii",
 	"sub-directories": [],
 	"files": "['IMG_4223.JPG', 'Asset0012 (2).jpg', 'Asset0011 (2).jpg']",
 	"images": [
@@ -498,7 +498,7 @@ export const directories = [
 		},
 	]},
 	{
-	"directory": "./../images/New Zealand",
+	"directory": "New Zealand",
 	"sub-directories": [],
 	"files": "['Asset0027 (1).jpg', 'IMG_4139.JPG', 'Asset0008.jpg', 'IMG_4072.JPG', 'Asset0025.jpg', 'IMG_4074.JPG', 'IMG_4012.JPG', 'IMG_4015.JPG', 'IMG_4019.JPG', 'Asset0028 (1).jpg', 'Asset0016.jpg', 'Asset0015.jpg', 'IMG_4279.jpg', 'Asset0010.jpg', 'IMG_4134.JPG', 'IMG_4041.JPG']",
 	"images": [
@@ -568,7 +568,7 @@ export const directories = [
 		},
 	]},
 	{
-	"directory": "./../images/Puerto Escondido",
+	"directory": "Puerto Escondido",
 	"sub-directories": [],
 	"files": "['Puerto Escondido.JPG']",
 	"images": [
@@ -578,7 +578,7 @@ export const directories = [
 		},
 	]},
 	{
-	"directory": "./../images/Copenhagen",
+	"directory": "Copenhagen",
 	"sub-directories": [],
 	"files": "['P1000886.JPG', 'P1000883.JPG', 'P1000823.JPG', 'P1000821.JPG', 'P1000804.JPG', 'P1000872.JPG', 'P1000899.JPG', 'P1000873.JPG', 'P1000849.JPG']",
 	"images": [
@@ -620,7 +620,7 @@ export const directories = [
 		},
 	]},
 	{
-	"directory": "./../images/Santorini",
+	"directory": "Santorini",
 	"sub-directories": [],
 	"files": "['P1000477.JPG', 'santorini-water.JPG', 'P1000276.JPG', 'P1000344.JPG', 'P1000368.JPG', 'P1000479.JPG']",
 	"images": [
@@ -650,7 +650,7 @@ export const directories = [
 		},
 	]},
 	{
-	"directory": "./../images/Athens",
+	"directory": "Athens",
 	"sub-directories": [],
 	"files": "['Athens.JPG', 'P1000598.JPG', 'P1000567.JPG', 'P1000612.JPG', 'P1000580.JPG', 'P1000624.JPG', 'P1000625.JPG']",
 	"images": [

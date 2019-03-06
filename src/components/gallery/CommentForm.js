@@ -2,12 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 
-import { addComment } from "./../actions";
+import { addComment } from "./../../actions";
 
-import './../css/CommentForm.css'
+import './../../css/CommentForm.css'
 
 function CommentForm(props){
-   props.change("imagePath", props.imagePath);
+   props.change("image", props.image);
    const { handleSubmit } = props;
 
    return (

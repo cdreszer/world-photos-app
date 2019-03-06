@@ -1,7 +1,7 @@
 import React from 'react';
 
-import './../css/index.css';
-import './../css/ParallaxPage.css';
+import './../../css/index.css';
+import './../../css/ParallaxPage.css';
 
 
 /**
@@ -12,7 +12,7 @@ function getBackgroundStyle(imagePath) {
   var imageURI = "";
 
   if (imagePath) {
-    imageURI = require(`./../images/${imagePath}`)
+    imageURI = require(`./../../images/${imagePath}`)
   }
 
   // random height from 250 - 650

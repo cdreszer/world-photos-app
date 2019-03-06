@@ -1,10 +1,10 @@
 import React from 'react'
 import Image from 'react-bootstrap/Image';
 
-import meImage from './../images/BIO.jpg';
+import meImage from './../../images/BIO.jpg';
 
-import './../css/index.css';
-import './../css/ImageBio.css';
+import './../../css/index.css';
+import './../../css/ImageBio.css';
 
 /** 
     Displays an image. On hover text appears on image and the image becomes opaque.

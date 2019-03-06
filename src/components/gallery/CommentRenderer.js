@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import './../css/CommentRenderer.css'
+import './../../css/CommentRenderer.css'
 
 function CommentRenderer(props) {
-   const filteredComments = props.comments.filter(comment => comment.imagePath === props.imagePath);
+   const filteredComments = props.comments.filter(comment => comment.image.image === props.image.image);
 
    const comments = filteredComments.map(comment => 
       <li key={comment.id}>

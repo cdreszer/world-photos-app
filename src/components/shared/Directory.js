@@ -4,8 +4,8 @@ import Image from 'react-bootstrap/Image';
 
 import { Link, withRouter } from 'react-router-dom';
 
-import './../css/index.css';
-import './../css/Directory.css';
+import './../../css/index.css';
+import './../../css/Directory.css';
 
 /**
   Directory outwardly displays a clickable image to the user.
@@ -23,7 +23,7 @@ class Directory extends Component {
   }
 
   render() {
-    const imageURI = require('./../images/' + this.props.image);
+    const imageURI = require('./../../images/' + this.props.image);
     return (
       <Link to={`/location/${this.props.name}`} > 
         <div className="directory-tile" id={this.props.name + "-tile"}>

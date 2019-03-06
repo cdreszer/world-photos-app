@@ -1,7 +1,7 @@
 import React from 'react';
 
-import './../css/index.css';
-import './../css/ParallaxPage.css';
+import './../../css/index.css';
+import './../../css/ParallaxPage.css';
 
 
 /**
@@ -12,7 +12,7 @@ function getBackgroundStyle(imagePath) {
   var topImageURI = "";
 
   if (imagePath) {
-    topImageURI = require(`./../images/${imagePath}`)
+    topImageURI = require(`./../../images/${imagePath}`)
   }
 
   return topImageURI.length ? { backgroundImage: `url(${topImageURI})`} : {};

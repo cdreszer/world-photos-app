@@ -25,14 +25,15 @@ for dirName, subdirList, fileList in os.walk(imagesDir):
     fileList.sort()
     level += 1
 
+  start = dirName.find(imagesDir) + len(imagesDir)
+  dirName = dirName[start:]
+
   print('\t{')
   print('\t%s' % '"directory": "' + dirName + '",')
   print('\t%s' % '"sub-directories": ' + str(subdirList) + ',')
   print('\t%s' % '"files": "' + str(fileList) + '",')
   print('\t%s' % '"images": [')
 
-  start = dirName.find(imagesDir) + len(imagesDir)
-  dirName = dirName[start:]
   # traverses all files
   for fname in fileList:
     # finds the end index of ./../images/ to use as start point and removes it

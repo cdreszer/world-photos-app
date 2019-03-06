@@ -1,10 +1,10 @@
 import React from 'react'
 import Row from 'react-bootstrap/Row';
 
-import Directory from "./Directory.js"
+import Directory from "./../shared/Directory.js"
 
-import './../css/index.css';
-import './../css/DirectoryContainer.css';
+import './../../css/index.css';
+import './../../css/DirectoryContainer.css';
 
 /**
   Directory container contains all the clickable directories

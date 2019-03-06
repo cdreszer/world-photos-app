@@ -3,8 +3,8 @@ import React from 'react'
 import DirectoryContainer from "./DirectoryContainer.js";
 import ImageBio from "./ImageBio.js";
 
-import './../css/index.css';
-import './../css/MainContent.css';
+import './../../css/index.css';
+import './../../css/MainContent.css';
 
 function HomePage(props) {
    return (

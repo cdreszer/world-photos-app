@@ -4,14 +4,12 @@ import Container from 'react-bootstrap/Container';
 
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
-import HomePage from "./HomePage.js"
-import ImageGalleryCarousel from "./ImageGalleryCarousel.js";
-import ParallaxPage from "./ParallaxPage.js";
-import ImageBio from "./ImageBio.js";
+import HomePage from "./home/HomePage.js"
+import ImageBio from "./home/ImageBio.js"; // about page
+import GalleryPage from "./gallery/GalleryPage.js";
+import ParallaxPage from "./parallax/ParallaxPage.js";
 import TravelMap from "./map/TravelMap.js";
-import ReduxCommentForm from './CommentForm.js'
-import CommentRenderer from './CommentRenderer.js'
-import PostcardPage from './PostcardPage.js'
+import PostcardPage from './postcards/PostcardPage.js'
 
 import './../css/index.css';
 import './../css/MainContent.css';
@@ -25,10 +23,11 @@ import './../css/MainContent.css';
     IDEAS: 
       - travel map that is clickable that reroutes to page (maybe add editable lon,lat on image gallery page)
         - hover over image on map has plane path pop up (dont know how difficult?)
-        - maybe scroll behind the map
+        - maybe parchment scroll behind the map
+        - editable lat/longs and travel paths
       - image title, desc, file name, country, region, etc. in JSON objects (maybe mongoDB)
         - might need to use thunk for loading and logging
-      - different types of views for images, carousel, magazine style, slides, etc.
+      * different types of views for images, carousel, magazine style, slides, etc.
       - allow for editing image descriptions and titles (preserve it)
       - maybe add a cart feature and gallery size chooser etc.
       - maybe use REDUX-FORM for some sort of user comments on locations
@@ -43,6 +42,8 @@ class MainContent extends Component {
     this.imageGalleryPage = this.imageGalleryPage.bind(this);
     this.aboutPage = this.aboutPage.bind(this);
     this.postcardPage = this.postcardPage.bind(this);
+    this.parallaxPage = this.parallaxPage.bind(this);
+    this.travelMapPage = this.travelMapPage.bind(this);
   }
 
   componentDidUpdate() {
@@ -55,7 +56,7 @@ class MainContent extends Component {
     an array of images within the directory.
   */
   getImagesFromPath(directories, imgPath) {
-    const path = './../images/' + imgPath;
+    const path = imgPath;
     var directory = directories.find((dir) => dir.directory === path);
 
     return directory ? directory.images : [];
@@ -72,9 +73,7 @@ class MainContent extends Component {
   imageGalleryPage({match}) {
     return (
       <Container id="main-content" >
-        <ImageGalleryCarousel title={match.params.locName} images={this.getImagesFromPath(this.props.directories, match.params.locName)}/>
-        <ReduxCommentForm imagePath={match.params.locName}/>
-        <CommentRenderer imagePath={match.params.locName}/>
+        <GalleryPage match={match} directories={this.props.directories} images={this.getImagesFromPath(this.props.directories, match.params.locName)} />
       </Container>
     );
   }
@@ -87,11 +86,23 @@ class MainContent extends Component {
     );
   }
 
+  parallaxPage() {
+    return (
+      <ParallaxPage />
+    );
+  }
+
   postcardPage() {
     return (
       <Container id="main-content" >
         <PostcardPage />
       </Container>
+    );
+  }
+
+  travelMapPage() {
+    return (
+      <TravelMap />
     );
   }
 
@@ -101,9 +112,9 @@ class MainContent extends Component {
         <Route path="/home" component={this.homePage} />
         <Route path="/about" component={this.aboutPage}/>
         <Route path="/location/:locName" component={this.imageGalleryPage} />
-        <Route path="/parallax" component={() => <ParallaxPage />} />
+        <Route path="/parallax" component={this.parallaxPage} />
         <Route path="/postcards" component={this.postcardPage} />
-        <Route path="/map" component={() => <TravelMap />} />
+        <Route path="/map" component={this.travelMapPage} />
         <Redirect to="/home" />
       </Switch>
     );

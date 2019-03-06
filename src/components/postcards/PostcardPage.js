@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 
 import Postcard from "./Postcard.js";
 
-import './../css/index.css';
+import './../../css/index.css';
 // import './../css/PostcardPage.css';
 
 /**
@@ -15,7 +15,7 @@ function PostcardPage(props) {
 
   const postcards = props.comments.map((comment, index) => 
     <div className="col-md-6 col-sm-12 ">
-      <Postcard image={comment.imagePath + ".JPG"} comment={comment}/>
+      <Postcard comment={comment}/>
     </div>);
 
   return (
