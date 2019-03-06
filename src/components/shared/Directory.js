@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Image from 'react-bootstrap/Image';
 
 import { Link, withRouter } from 'react-router-dom';
+import { requireWithBackup } from './../../util';
 
 import './../../css/index.css';
 import './../../css/Directory.css';
@@ -23,7 +24,8 @@ class Directory extends Component {
   }
 
   render() {
-    const imageURI = require('./../../images/' + this.props.image);
+    const imageURI = requireWithBackup(this.props.image);
+    
     return (
       <Link to={`/location/${this.props.name}`} > 
         <div className="directory-tile" id={this.props.name + "-tile"}>

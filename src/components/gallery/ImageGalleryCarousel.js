@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 
+import { requireWithBackup } from './../../util';
+
 import './../../css/index.css';
 import './../../css/ImageGalleryCarousel.css';
 
@@ -37,7 +39,7 @@ class ImageGalleryCarousel extends Component {
 
   /** Each carousel item. */
   ImageGalleryCarouselItem(props) {
-    const imageURI = require('./../../images/' + props.image);
+    const imageURI = requireWithBackup(props.image);
     return (
         <Carousel.Item key={props.name} className="carouselItem">
           <img

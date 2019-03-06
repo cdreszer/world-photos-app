@@ -11,6 +11,8 @@ import ParallaxPage from "./parallax/ParallaxPage.js";
 import TravelMap from "./map/TravelMap.js";
 import PostcardPage from './postcards/PostcardPage.js'
 
+import { getImagesFromPath } from './../util'
+
 import './../css/index.css';
 import './../css/MainContent.css';
 
@@ -51,17 +53,6 @@ class MainContent extends Component {
     window.scrollTo(0, 0);
   }
 
- /** 
-    Given an array of directories and an image path, returns
-    an array of images within the directory.
-  */
-  getImagesFromPath(directories, imgPath) {
-    const path = imgPath;
-    var directory = directories.find((dir) => dir.directory === path);
-
-    return directory ? directory.images : [];
-  }
-
   homePage() {
     return (
       <Container id="main-content" >
@@ -73,7 +64,7 @@ class MainContent extends Component {
   imageGalleryPage({match}) {
     return (
       <Container id="main-content" >
-        <GalleryPage match={match} directories={this.props.directories} images={this.getImagesFromPath(this.props.directories, match.params.locName)} />
+        <GalleryPage match={match} directories={this.props.directories} images={getImagesFromPath(this.props.directories, match.params.locName)} />
       </Container>
     );
   }

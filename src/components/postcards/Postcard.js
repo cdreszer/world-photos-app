@@ -4,10 +4,12 @@ import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row'
 
+import { requireWithBackup } from './../../util';
+
 import './../../css/Postcard.css'
 
 function FrontPostCard(props) {
-   const imageURI = require('./../../images/' + props.comment.image.image);
+   const imageURI = requireWithBackup(props.comment.image.image);
 
    return (
       <div className="image-side card-face">
