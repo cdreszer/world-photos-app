@@ -33,4 +33,4 @@ const mapDispatchToProps = (dispatch) => ({
     onSubmit: comment => dispatch(addComment(comment))
 });
 
-export default connect(state => {}, mapDispatchToProps)(ReduxCommentForm);
+export default connect(null, mapDispatchToProps)(ReduxCommentForm);

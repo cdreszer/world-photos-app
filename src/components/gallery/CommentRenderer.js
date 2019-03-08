@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import './../../css/CommentRenderer.css'
 
 function CommentRenderer(props) {
-   const filteredComments = props.comments.filter(comment => comment.image.image === props.image.image);
+   var filteredComments = props.comments.filter(comment => comment.image.image === props.image.image);
+   filteredComments = filteredComments ? filteredComments : [];
 
    const comments = filteredComments.map(comment => 
       <li key={comment.id}>

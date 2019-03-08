@@ -44,18 +44,18 @@ class Header extends Component {
     let locationList = this.props.directories && this.props.directories.length > 0 
       ? this.props.directories[0]["sub-directories"].sort() : [];
     const locations = locationList.map((loc) => 
-      <LinkContainer to={`/location/${loc}`}>
-        <NavDropdown.Item key={loc} id={loc}>{loc}</NavDropdown.Item>
+      <LinkContainer key={loc} to={`/location/${loc}`}>
+        <NavDropdown.Item  id={loc}>{loc}</NavDropdown.Item>
       </LinkContainer>);
 
     // add to Navbar: onBlur={this.handleBlur} .... however if click dropdown closes menu :(
     return (
       <header>
-        <Navbar expanded={this.state.isOpen} expand="md" variant="dark">
+        <Navbar expand="md" variant="dark">
           <LinkContainer to='/home'>
             <Navbar.Brand>Chase Dreszer's Travel Photos</Navbar.Brand>
           </LinkContainer>
-          <Navbar.Toggle onClick={this.handleToggler} aria-controls="responsive-navbar-nav" />
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
             </Nav>

@@ -68,7 +68,7 @@ class Postcard extends Component {
                   <FrontPostCard key="front" comment={this.props.comment}/>
                   <BackPostCard key="back" comment={this.props.comment} />
                </ReactCardFlip>
-               <button onClick={this.handleClick}><i class="fa fa-rotate-right"></i></button>
+               <button onClick={this.handleClick}><i className="fa fa-rotate-right"></i></button>
             </div>
          </React.Fragment>
       );

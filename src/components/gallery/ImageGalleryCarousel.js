@@ -46,7 +46,7 @@ class ImageGalleryCarousel extends Component {
             className="d-block w-100"
             src={imageURI}
             alt={"Slide" + props.slide}
-            fluid
+            fluid="true"
           />
           <Carousel.Caption >
             <h3 className="imageName">{props.name}</h3>

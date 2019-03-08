@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
 import Image from 'react-bootstrap/Image';
 
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { requireWithBackup } from './../../util';
 
 import './../../css/index.css';
@@ -37,7 +36,7 @@ class Directory extends Component {
   }
 }
 
-export default withRouter(connect()(Directory));
+export default Directory;
 
 // Dispatch redux action upon click. **MIGHT WANT TO STILL USE AND THEN DO this.props.history.push("{`/location/${this.props.name}`}")
 

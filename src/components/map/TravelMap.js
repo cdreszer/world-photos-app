@@ -70,6 +70,7 @@ class TravelMap extends Component {
  
   render() {
       const photoAlbums = this.props.latlongs.map(album => <PhotoAlbumMarker  
+            key={album.name}
             lat={album.lat}
             lng={album.lng}
             name={album.name} 

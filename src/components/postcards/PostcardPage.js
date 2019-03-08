@@ -14,8 +14,8 @@ import './../../css/index.css';
 function PostcardPage(props) {
 
   const postcards = props.comments.map((comment, index) => 
-    <div className="col-md-6 col-sm-12 ">
-      <Postcard comment={comment}/>
+    <div key={comment.id} className="col-md-6 col-sm-12 ">
+      <Postcard key={comment.id} comment={comment}/>
     </div>);
 
   return (
